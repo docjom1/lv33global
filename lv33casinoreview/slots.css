@@ -1,0 +1,748 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+figure {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Lists */
+ol,
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+/* Forms */
+button,
+input,
+select,
+textarea {
+    margin: 0;
+}
+
+button,
+select {
+    background-color: transparent;
+    color: inherit;
+    border-width: 0;
+    padding: 0;
+    cursor: pointer;
+    text-transform: none;
+}
+
+th,
+td {
+    padding: 0;
+
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+@font-face {
+    font-family: 'EBGaramond';
+    src: url('../fonts/EBGaramond-VariableFont_wght.ttf');
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #050202;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+      
+
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #e23030;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.navbar .search-bar input {
+    border: none;
+    padding: 8px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.navbar .search-btn {
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar .sign-up {
+    background-color: #ff6600;
+    padding: 8px 16px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navbar .sign-up:hover {
+    background-color: #e65c00;
+}
+
+/* Hero Banner Section */
+.hero-banner {
+    max-width: 1384px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    background-image: url("../img/1.png"); /* Ensure correct image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+/* Overlay Effect */
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    border-radius: 18px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(197, 22, 22, 0.945); /* Dark red transparent layer */
+    z-index: 1;
+}
+
+/* Ensures Content Stays Above Overlay */
+.hero-banner * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Banner Content Centering */
+.banner-content {
+    max-width: 800px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+/* Title Styling */
+.banner-content .title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Subtitle Styling */
+.banner-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Call-to-Action Button */
+.btn {
+    display: inline-block;
+    background-color: #FFD700;
+    color: #000;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+/* Responsive Design */
+
+    .hero-banner {
+        height: 250px;
+    }
+    .banner-content .title {
+        font-size: 24px;
+    }
+    .banner-content p {
+        font-size: 16px;
+    }
+
+
+.logo{
+    font-family: EBGaramond, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+.navigation-menu ul{
+    display: flex;
+}
+.navigation-menu ul li{
+    padding-left: 60px;
+    font-family: EBGaramond, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+
+}
+.header-banner{
+    font-family: EBGaramond, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-banner div{
+    width: 889px;
+}
+.header-banner h1{
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 86.4px;
+
+}
+.header-banner p{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 31.2px;
+}
+.title{
+    font-family: EBGaramond, sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 66px;
+    text-align: center;
+    padding-top: 16px;
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 32px;
+    padding: 20px 20px;
+}
+.card-img {
+    background: #c71c19f3;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: auto; /* Remove fixed height */
+    width: 100%; /* Ensure it takes full width */
+    overflow: hidden; /* Prevents image overflow */
+}
+
+.card-img img {
+    width: 100%; /* Ensure full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Adjust how the image fits */
+    border-radius: 16px; /* Match parent border radius */
+}
+
+
+.top:before{
+    content: url("/img/Top (1).png");
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+.hot:before{
+    content: url("/img/Hot (1).png");
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+.card{
+    background-color: #f0e8e8;
+    padding: 12px;
+    border-radius: 16px;
+    border: 2px solid #e0d0d0;
+}
+.card h2{
+    font-family: EBGaramond, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    padding-top: 12px;
+}
+.title-card{
+    font-family: EBGaramond, sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 32px;
+    color: #971616;
+    width: 239px;
+}
+.card-title{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+}
+.card-title p{
+    font-family: EBGaramond, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 20px;
+}
+.card-title span{
+    font-family: EBGaramond,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+
+}
+.rating{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+}
+.rating p{
+    font-family: EBGaramond, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #625c5b;
+}
+.pay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 13px;
+}
+.pay p{
+    font-family: EBGaramond, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.6px;
+    text-align: center;
+    color: #33393d;
+}
+.pay button{
+    padding: 16px 32px;
+    background-color: #ce1e1b;
+    border-radius: 40px;
+    font-family: EBGaramond, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #FFFFFF;
+    transition: 0.2s;
+}
+.pay button:hover{
+    background-color: #A03A38BB;
+    transform: translateY(-4px);
+}
+.payment{
+    display: flex;
+    flex-direction: column;
+}
+
+.example {
+    background: #fffae6;
+    padding: 15px;
+    border-left: 5px solid #070605;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+ul, ol {
+    padding-left: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+    .cards-container {
+        grid-template-columns: 1fr; /* ÐžÐ´Ð½Ð° ÐºÐ¾Ð»Ð¾Ð½ÐºÐ° Ð½Ð° Ð¼Ð¾Ð±Ñ–Ð»ÑŒÐ½Ð¸Ñ… */
+        grid-column-gap: 0;
+        grid-row-gap: 24px;
+        padding: 24px 16px;
+    }
+    .title-card {
+        width: 239px; /* Uncommented and applied the width */
+        background-color: #fff; /* Optional: Add a background color */
+        padding: 10px; /* Add padding for better spacing */
+        border-radius: 8px; /* Add rounded corners for a modern look */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+        text-align: center; /* Center align content */
+        font-size: 16px; /* Ensure proper font size */
+        color: #333; /* Text color for readability */
+    }
+    
+}
+
+.contacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+.contacts a {
+    padding-right: 10px;
+}
+.banner {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 100000;
+    background-color: #e4dfdeaa;
+}
+.banner_block {
+    background-color: white;
+    position: absolute;
+    width: 720px;
+    padding: 70px 40px;
+    border-radius: 20px;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.banner_block .banner_title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.banner_block .banner_buttons {
+    display: flex;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+}
+.banner_block .banner_buttons button {
+    padding: 10px 25px;
+    text-align: center;
+    width: 250px;
+    border-radius: 20px;
+    border: 1px solid #A03A38;
+    margin: 0 10px;
+    color: #A03A38;
+    font-size: 24px;
+    cursor: pointer;
+}
+.banner_title p {
+    margin: 40px 0;
+}
+.banner_atent {
+    text-align: center;
+    font-size: 14px;
+    color: #202020;
+    padding: 20px 50px;
+}
+
+@media screen and (max-width: 580px) {
+
+    .header_line {
+        padding: 30px 0;
+    }
+
+    .navigation-menu ul li {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .header_banner h1 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .banner_block .banner_buttons button {
+        padding: 10px 25px;
+        text-align: center;
+        width: 120px;
+        font-size: 16px;
+    }
+    .banner_block {
+        width: 320px;
+        padding: 30px 20px;
+    }
+    .banner_atent {
+        font-size: 10px;
+        margin-top: 15px;
+        padding: 0 10px;
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Content Section */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #cc190c75;
+    padding: 20px;
+    border-radius: 8px;
+    gap: 20px;
+    width: 800;  /* Set a specific width */
+}
+
+/* Image Styling */
+.content img {
+    width: 320px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Content Text */
+.content-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Heading */
+.content-text h2 {
+    color: #f31212; /* Changed to white */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph */
+.content-text p {
+    margin-bottom: 15px;
+    color: #ffffff; /* Changed to white */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Read More Button */
+.btn {
+    display: inline-block;
+    background-color: #ff5100;
+    color: #ffffff; /* Changed to white */
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    align-self: flex-start;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #f51607;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        align-self: center;
+    }
+}
+
+
+.casino-section {
+    margin-bottom: 30px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.casino-section h2 {
+    color: #ffffff; /* Changed to white */
+    text-align: center;
+}
+
+.casino-section .btn {
+    display: block;
+    background-color: #f1c40f;
+    color: #a11111; /* Changed to white */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px auto; /* Center the button */
+    text-align: center;
+    width: fit-content; /* Adjust width to content */
+}
+
+.casino-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.casino-section li {
+    margin-bottom: 10px;
+    color: #dd0c0c; /* Changed to white */
+}
+
+.casino-section p {
+    color: #ffffff; /* Ensure paragraph text is white */
+}
+
+.container {
+    width: 60%;
+   
+    padding: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+p {
+    line-height: 1.6;
+    color: #f1f1f1;
+}
+
+
+
+/* Hero Section Styling */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #8b0000;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    width: 80%;
+}
+
+.hero-content img {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 10px;
+}
+/* Betting Button Styling - Centered at the Bottom */
+.betting-btn {
+    position: absolute;
+    bottom: 5%; /* Adjust this value for fine-tuning */
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    color: white;
+    padding: 20px 40px; /* Larger button */
+    font-size: 22px; /* Larger text */
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.betting-btn:hover {
+    background: rgb(4, 230, 23);
+    transform: translateX(-50%) scale(1.05); /* Slight zoom effect */
+}
+

@@ -1,0 +1,428 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.navbar .search-bar input {
+    border: none;
+    padding: 8px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.navbar .search-btn {
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar .sign-up {
+    background-color: #ff6600;
+    padding: 8px 16px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navbar .sign-up:hover {
+    background-color: #e65c00;
+}
+
+/* Container for the entire page */
+/* General page layout */
+.pages-outer {
+    width: 80%;
+    padding: 30px 15px;
+    background-color: #f5f5f5;
+    margin: 0 auto; /* This ensures the outer container is centered */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto; /* Centers the container within its parent */
+}
+
+.pages-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically if there's extra space */ 
+}
+
+  
+.main {
+    width: 100%;
+    background-color: transparent;
+    padding: 40px;
+    border-radius: 10px;
+}
+  
+/* Header styling */
+.page-header h1 {
+    font-size: 2.1srem;
+    font-weight: 700;
+    color: #2d3e50;
+    margin-bottom: 25px;
+    text-align: left;
+}
+  
+/* Author section */
+.author_section__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+  
+/* Avatar and author meta information */
+.author_section__avatar_and_meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+/* Avatar styling */
+.author_section__avatar {
+    margin-right: 15px;
+ }
+  
+.author_section__avatar img {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+  
+/* Meta section - author name and job title */
+.author_section__meta {
+    display: flex;
+    flex-direction: column;
+}
+  
+.author_section__name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+}
+  
+.author_section__job_and_fact_checked {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .author_section__label__wrapper {
+    background-color: #d2ffe6;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .author_section__label_icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+  }
+  
+  .author_section__label {
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  .author_section__date {
+    font-size: 14px;
+    color: #555; /* Dark gray color for readability */
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f5f5f5; /* Light gray background */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Subtle border */
+    margin-top: 5px;
+}
+
+.author_section__date span {
+    color: #007bff; /* Blue color for the date */
+    font-weight: bold;
+}
+
+/* Main Container for Campaign Details */
+.campaign-details {
+    background-color: #ffffff;
+    border-radius: 0px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin: 20px auto; /* Centers the container horizontally */
+    width: 50%; /* Adjust the width as needed */
+    max-width: 1200px; /* Optional: Maximum width */
+    text-align: left; /* Keep text aligned to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Vertically centers the content */
+    align-items: flex-start; /* Horizontally centers the content */
+    margin-top: 0px;
+    border: 2px solid #1c2642;
+    box-shadow: 0 3px 3px black;
+}
+
+/* Title Styling */
+.campaign-details h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.campaign-details h3 a {
+    color: #1c2642;
+    text-decoration: none;
+}
+
+/* Paragraph Styling */
+.campaign-details p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.campaign-details a.link-primary {
+    color: #1c2642;
+    font-weight: bold;
+}
+
+/* Bonus Tags Section */
+.bonus-tags {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.bonus-tags strong {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: normal;
+    justify-content: center;
+}
+
+.bonus-tags .bonus-exclusive-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0; /* Optional: background color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 14px;
+    text-transform: uppercase; /* Optional: makes text uppercase */
+    border: 1px solid #000; /* Optional: adds a border around the button */
+    width: auto; /* Makes the width auto so it adapts to the text */
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 2px black;
+}
+
+.bonus-tags .bonus-exclusive-tag:hover {
+    transform: scale(1.1); /* Scales the element by 10% */
+    cursor: pointer; /* Adds a pointer cursor to indicate interactivity */ 
+}
+
+.bonus-tags .bonus-limited-tag {
+    background-color: orangered;
+    color: white;
+}
+
+.bonus-tags .bonus-limited-tag:hover {
+    background-color: #CC5500; /* Change to a darker shade on hover */
+    cursor: pointer; /* Adds a pointer cursor to indicate interactivity */
+}
+
+.bonus-tags .bonus-expiration-hourglass {
+    background-color: #f0f0f0;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+/* Bonus Info Rows */
+.bonus-info-rows {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Align info rows vertically */
+    align-items: flex-start;
+}
+
+.bonus-info-row {
+    display: flex;
+    justify-content: space-between; /* Align items in row from left to right */
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%; /* Ensure full width for the rows */
+}
+
+.bonus-info-row svg {
+    margin-right: 10px;
+    fill: #666;
+}
+
+.bonus-info-row .mr-s {
+    flex: 1;
+}
+
+.bonus-info-row .mr-s span {
+    font-size: 16px;
+    color: black;
+}
+
+.bonus-info-row .mr-s strong {
+    color: black;
+}
+
+/* Hover effect for expandable sections */
+.bonus-info-row:hover {
+    background-color: #f8f8f8;
+}
+
+.bottom-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.bottom-buttons .yes-btn, .bottom-buttons .no-btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Overall section styling */
+.casino-bonus-section {
+    width: 80%; /* Adjust the width to your liking */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+/* Content container inside the section */
+.content-container {
+    max-width: 900px; /* Limit the width for better readability */
+    margin: 0 auto;
+}
+
+/* Main heading styling (h2) */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Subheading styling (h3) */
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: blacks;
+    margin-bottom: 15px;
+}
+
+/* Styling for links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Add a separator line after each h3 (subheading) */
+h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: transparent;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .casino-bonus-section {
+        width: 95%; /* Make the section take up more space on smaller screens */
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}

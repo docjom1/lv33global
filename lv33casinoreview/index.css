@@ -1,0 +1,553 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.navbar .search-bar input {
+    border: none;
+    padding: 8px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.navbar .search-btn {
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar .sign-up {
+    background-color: #ff6600;
+    padding: 8px 16px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navbar .sign-up:hover {
+    background-color: #e65c00;
+}
+
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: #eeeeee;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Category Explorer Section */
+.categories {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Category Grid Layout */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Category Card */
+.category-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1B2028;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.category-card:hover {
+    background: #252B35;
+    transform: scale(1.05);
+}
+
+/* CASINO REVIEW SECTION */
+.casino-reviews {
+    width: 85%;
+    margin: 50px auto;
+}
+
+.casino-reviews h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* CASINO CARD */
+.casino-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* RANKING BADGE */
+.rank-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: blue;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* LEFT SECTION - CASINO LOGO & NAME */
+.casino-left {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.casino-logo img {
+    width: 150px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+.casino-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.launch-date {
+    font-size: 14px;
+    color: gray;
+}
+
+/* MIDDLE SECTION - DESCRIPTION & REGULATION */
+.casino-middle {
+    width: 50%;
+    padding: 0 50px;
+}
+
+.bonus-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.regulated {
+    font-size: 14px;
+    color: gray;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.regulated img {
+    width: 100px;
+}
+/* Center align text in middle section */
+.casino-middle {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Space between Bonus Text and Regulated By */
+.regulated {
+    margin-top: 10px; /* Adjust spacing */
+    font-size: 14px;
+    color: #777; /* Optional: Change text color */
+}
+
+/* Style the Gambling Commission Image */
+.regulated img {
+    height: 20px; /* Adjust size */
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* Style for Flag */
+.flag-container {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin: 0px 0; /* Adds spacing */
+}
+
+.flag {
+    width: 50px; /* Adjust flag size */
+    height: auto;
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+/* Center align text and flag */
+.casino-middle {
+    text-align: center;
+}
+
+
+/* RIGHT SECTION - VISIT SITE BUTTON & PAYMENT METHODS */
+.casino-right {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.visit-btn {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    width: 180px;
+    margin-bottom: 10px;
+}
+
+.visit-btn:hover {
+    background: #0056b3;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.payment-methods img {
+    width: 40px;
+    height: auto;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .casino-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .casino-left, .casino-middle, .casino-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .casino-middle {
+        padding: 10px;
+    }
+
+    .payment-methods {
+        justify-content: center;
+    }
+}
+/* Show More Button Section */
+.show-more {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.show-more-btn {
+    background-color: #fff;
+    color: #111;
+    border: 2px solid #111;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.show-more-btn:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+.loading-bar {
+    width: 50px;
+    height: 5px;
+    background-color: #007bff;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.hidden-casino {
+    display: none;
+}
+
+
+/* Gambling News Section */
+.gambling-news {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f8f8f8;
+}
+
+.gambling-news h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.gambling-news p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* News Container */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* News Card */
+.news-card {
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.03);
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.news-author {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.news-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.news-time {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .news-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-card {
+        width: 90%;
+    }
+}
+/* Slot Games Section */
+.slot-games {
+    margin: 40px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.slot-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.slot-card {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.slot-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.slot-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.play-btn {
+    display: block;
+    text-decoration: none;
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.play-btn:hover {
+    background: #0056b3;
+}
+
+/* Hidden Slots */
+.hidden-slot {
+    display: none;
+}
+
+/* Show More Button */
+.show-more-slots {
+    margin-top: 20px;
+}
+
+.show-more-slots-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.show-more-slots-btn:hover {
+    background: #218838;
+}
+/* Container for Review Items */
+.review-item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adjust spacing between image and text */
+    margin-bottom: 20px;
+    max-width: 1500px;
+}
+
+/* Image Styling */
+.review-item img {
+    width: 120px; /* Adjust size based on your design */
+    height: 100px;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+/* Text Content */
+.review-item-content {
+    flex: 1; /* Takes up remaining space */
+}
+
+/* Title */
+.review-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin:  0;
+    color: #ff4800; /* Adjust color if needed */
+}
+
+/* Description */
+.review-item p {
+    font-size: 16px;
+    color: #000000;
+    margin: 0;
+    line-height: 1.4;
+    margin-left: 10px; /* Adjust spacing */
+}
+.table-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+}
+

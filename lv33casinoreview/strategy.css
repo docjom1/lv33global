@@ -1,0 +1,537 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f2f2;
+    
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.navbar .search-bar input {
+    border: none;
+    padding: 8px;
+    width: 200px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.navbar .search-btn {
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: black;
+    
+
+/* Login Button */
+.login {
+    background-color: transparent;
+    padding: 10px 18px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid white;
+}
+
+.login:hover {
+    background-color: orangered;
+    transform: scale(1.05);
+}
+
+.et_pb_heading_container {
+    text-align: center;
+    margin-bottom: 30px;
+    margin: 40px auto; /* Centers the container with auto margin on the left and right */
+    display: block;
+    max-width: 1200px; /* Maximum width to keep content centered */
+    padding:  20px; /* Add padding for a little spacing inside */
+}
+
+/* Heading Styling */
+.et_pb_module_heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff; /* White color for the heading */
+    margin-bottom: 15px; /* Space between the heading and description */
+    text-transform: uppercase; /* Capitalize all letters */
+    margin-top: 30px;
+}
+
+/* Description Text */
+.et_pb_text {
+    text-align: center;
+    font-size: 16px;
+    color: #ddd; /* Light gray color for the description */
+    max-width: 90%; /* Limit the width of the text */
+    width: 90%;
+    margin: 0 auto 30px; /* Centers the text and adds space below */
+    padding: 0 20px; /* Add padding for spacing inside */
+}
+
+/* Blog Grid Container */
+.et_pb_blog_grid {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the items horizontally */
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 100px;
+}
+
+/* Blog Post Card */
+.et_pb_post {
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 30%; /* 3 posts per row */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px; /* Adds space between rows */
+    border: 1PX solid #3d3d3d;
+}
+
+/* Image in Blog Post */
+.et_pb_image_container img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+
+/* Blog Post Title */
+
+.entry-title a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.entry-title {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.entry-title a:hover {
+    text-decoration: underline;
+}
+
+/* Blog Post Description */
+.post-content {
+    padding: 10px 15px;
+    color: #ccc;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Read More Button */
+.button-container {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically (if needed) */
+    width: 100%;  /* Ensures full width */
+    margin-top: 5px; /* Adjust spacing */
+    margin-bottom: 10px; /* Adjust spacing */
+}
+
+/* Read More Button */
+.more-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f7931e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Hover effect */
+.more-link:hover {
+    background-color: #e67e00;
+}
+/* Hover Effect on Blog Posts */
+.et_pb_post:hover {
+    transform: translateY(-10px);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .et_pb_blog_grid {
+        flex-direction: column; /* Stacks the items vertically */
+        align-items: center;
+    }
+
+    .et_pb_post {
+        width: 80%; /* Ensures the blog post takes up more space on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #3d3d3d;
+    color: white;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 400px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+  hr::after {
+    background: transparent;
+    content: "";
+    padding: 0 4px;
+    position: relative;
+    top: -5px;
+}
+
+/* General Section Styling */
+.content-block {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: black;
+    width: 100%;
+    max-width: 1200px; /* Ensures it doesn’t get too wide on large screens */
+    margin: 70px auto; /* Centers horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content inside */
+}
+
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Container for Tips */
+.highlight-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Individual Tip Blocks */
+.icon-block {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.icon-block:hover {
+    transform: translateY(-5px);
+}
+
+/* Title and Icon Layout */
+.icon-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-title .icon img {
+    width: 60px;
+    height: auto;
+}
+
+/* Headings */
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .icon-block {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icon-block {
+        width: 100%;
+    }
+
+    .icon-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .icon-title .icon img {
+        width: 40px;
+    }
+}
+
+/* Section Styling */
+.content-block {
+    padding: 40px 0;
+    margin-top: 0;
+}
+
+.content-block.plain-text h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-top: 0;
+}
+
+.content-block.boxes-block {
+    background-color: transparent;
+}
+
+/* Link Tiles Container */
+.link-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 30px;  /* Space between tiles */
+    justify-items: center;
+    padding: 20px
+}
+
+/* Tile Styling */
+.tile {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 375px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tile:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.tile .icon {
+    padding: 20px;
+}
+
+.tile .icon img {
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.tile .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tile .desc {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Hover Effect on Links */
+.tile a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 1024px) {
+    .link-tiles {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .link-tiles {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+
+    .tile .title {
+        font-size: 16px;
+    }
+
+    .tile .desc {
+        font-size: 12px;
+    }
+}
+/* FOOTER STYLES */
+.footer {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* FOOTER LINKS */
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-column {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #ff7300 ;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: #f8c100;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    text-align: left;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.newsletter-form button {
+    background-color: #f8c100;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.newsletter-form button:hover {
+    background-color: #ffcc00;
+}
+
+/* TRUSTED SECTION */
+.trust-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.trust-section img {
+    width: 120px;
+    margin: 10px;
+}
+
+/* COPYRIGHT TEXT */
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+}

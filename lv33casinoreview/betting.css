@@ -1,0 +1,500 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f2f2;
+    
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.navbar .search-bar input {
+    border: none;
+    padding: 8px;
+    width: 200px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.navbar .search-btn {
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+/* Hero Image */
+.hero-image {
+    width: 100%;
+    max-width: 100; /* Ensures it does not exceed a certain size */
+    height: auto;
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+
+.promo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.promo-card {
+    background: rgba(255, 136, 0, 0.349);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.promo-card * {
+    color: white;
+}
+
+.promo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.promo-header img {
+    width: 200px;
+    height: 100px;
+}
+
+.promo-content {
+    background: rgb(255, 102, 0);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rating {
+    font-size: 20px;
+    color: rgb(72, 255, 0);
+}
+
+.review-btn {
+    background: rgb(71, 156, 0);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Consistent Visit Button Styling */
+.visit-btn {
+    background: #0bb905; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Consistent padding */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer; /* Pointer cursor */
+    transition: background 0.3s ease; /* Smooth hover effect */
+    display: inline-block; /* Ensure it fits content properly */
+}
+
+.visit-btn:hover {
+    background: #099a04; /* Slightly darker green on hover */
+}
+
+.features {
+    list-style: none;
+    padding: 10px 0 0 0;
+    color: #333;
+}
+
+.features li {
+    padding: 5px 0;
+}
+
+
+/* Main Content */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(139, 7, 7, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 72, 0, 0.5);
+}
+
+/* Offer Container - Align all offers properly */
+.offer-container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Added spacing between offers */
+}
+
+/* Individual Offer Card */
+.offer-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    border: 2px solid #c54a03;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+}
+
+/* Rank Styling */
+.rank {
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Logo & Review Section */
+.logo-info {
+    text-align: center;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.launch {
+    font-size: 14px;
+    color: gray;
+    margin: 5px 0;
+}
+
+.review-link {
+    display: block;
+    color: blue;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.review-link:hover {
+    text-decoration: underline;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* If vertical centering is also needed */
+    flex-grow: 1;
+    text-align: center;
+}
+
+.offer-text {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.red {
+    color: rgb(255, 94, 0);
+    font-weight: bold;
+}
+
+/* Call to Action (CTA) Section */
+.cta {
+    text-align: center;
+    width: 200px;
+}
+
+.valid {
+    font-size: 12px;
+    color: gray;
+}
+
+.visit-site {
+    display: block;
+    background-color: #c75204;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.visit-site:hover {
+    background-color: #120ee9;
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.payment-methods img {
+    width: 30px;
+    margin: 5px;
+}
+
+/* Compare Checkbox */
+.compare {
+    font-size: 14px;
+    color: gray;
+    display: block;
+    margin-top: 10px;
+}
+
+.terms-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 10px; /* Increase padding to enhance spacing */
+    border: 2px solid #a52904;
+    border-radius: 5px;
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    min-height: 50px; /* Adjust height to ensure content spreads */
+}
+
+.terms {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+    max-width: 90%; /* Prevents text from shrinking too much */
+    text-align: center;
+}
+
+
+
+/* Section Headings */
+h1, h2, h3 {
+    text-align: center; /* Ensures all headings are centered */
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(167, 40, 1, 0.2);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+p, ul, ol {
+    text-align: left; /* Align text to the left */
+    margin: 0 auto; /* Center the block */
+    max-width: 800px; /* Limit width for better readability */
+}
+
+/* Footer */
+footer {
+    background: #cf3000;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center; /* Center the text */
+}
+
+footer p {
+    margin: 0;
+    color: #f3f7f1;
+}
+
+/* Hover Effects */
+h2:hover, h3:hover {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Fade-in Effect */
+.container {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar & Hero Section */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: linear-gradient(to right, red, black);
+    box-shadow: 0 5px 10px rgba(255, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+.hero {
+    text-align: center;
+    padding: 10px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.hero {
+    padding: 0px; /* Adjust padding as needed */
+    text-align: center; /* Centers the content */
+}
+
+.hero-image {
+    max-width: 100dvw;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the image */
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: black;
+    color: red;
+    box-shadow: 0 0 10px red;
+}
+
+.content-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid red;
+    color: red;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background: red;
+    color: white;
+}
+
+
+
+    .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #1b8102bb; /* Adjust button color */
+        color: #fff;
+        text-decoration: none;
+        font-size: 50px;
+        border-radius: 5px;
+        margin-top: 15px; /* Adds space between the image and button */
+    }
