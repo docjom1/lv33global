@@ -1,25 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const showMoreBtn = document.querySelector(".show-more-btn");
-    let casinoCards = document.querySelectorAll(".casino-card");
-    let visibleCount = 2;
+let slideIndex = 0;
+showSlides();
 
-    // Hide extra casino cards
-    casinoCards.forEach((card, index) => {
-        if (index >= visibleCount) {
-            card.style.display = "none";
-        }
-    });
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
 
-    showMoreBtn.addEventListener("click", function () {
-        casinoCards.forEach((card, index) => {
-            if (index >= visibleCount && index < visibleCount + 2) {
-                card.style.display = "block";
-            }
-        });
-
-        visibleCount += 2;
-        if (visibleCount >= casinoCards.length) {
-            showMoreBtn.style.display = "none";
-        }
-    });
-});
