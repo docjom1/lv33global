@@ -78,7 +78,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-      
 
 }
 
@@ -171,7 +170,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(197, 22, 22, 0.945); /* Dark red transparent layer */
+    background-color: rgba(255, 81, 0, 0.945); /* Dark red transparent layer */
     z-index: 1;
 }
 
@@ -205,13 +204,74 @@ body {
 .btn {
     display: inline-block;
     background-color: #FFD700;
-    color: #000;
+    color: #fff7f7;
     padding: 12px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: 0.3s;
 }
+/* Center the Table of Contents Container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: black;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    text-align: center; /* Ensures all content inside is centered */
+}
+
+/* Table of Contents Title */
+.table-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Center the Navigation List */
+.article-navigation {
+    display: flex;
+    flex-direction: column; /* Stacks list items vertically */
+    align-items: center; /* Centers content */
+    justify-content: center; /* Aligns content centrally */
+    width: 100%;
+}
+
+/* Remove default list padding & style */
+.article-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items in the center */
+}
+
+/* Style List Items */
+.article-navigation li {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 8px 0;
+    text-align: center;
+}
+
+/* Default Link Styling */
+.article-navigation a {
+    color: orange;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.article-navigation a:hover {
+    color: white;
+}
+
+
 
 .btn:hover {
     background-color: red;
@@ -286,6 +346,14 @@ body {
     grid-column-gap: 40px;
     grid-row-gap: 32px;
     padding: 20px 20px;
+}
+.container {
+    width: 60%;
+    padding: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    color: #fff;
 }
 .card-img {
     background: #c71c19f3;
@@ -423,6 +491,78 @@ ul, ol {
     display: inline-block;
 }
 
+.disclaimer h3{
+    font-weight: 600;
+    padding-bottom: 16px;
+}
+.disclaimer p{
+    font-weight: 400;
+}
+.title-text{
+    font-family: 'EBGaramond', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 72px;
+    text-align: center;
+}
+
+.text{
+    padding: 16px;
+    font-family: EBGaramond, sans-serif;
+}
+.text h2{
+    font-size: 36px;
+    font-weight: 700;
+    padding-bottom: 6px;
+}
+.text p, .text ul{
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 6px;
+}
+.text h3{
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 6px;
+}
+.text h4{
+    font-size: 25px;
+    font-weight: 400;
+    padding-bottom: 6px;
+}
+@media (max-width: 767px){
+    .header{
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation-menu ul li{
+        padding-left: 16px;
+    }
+    .navigation-menu ul{
+        padding-top: 16px;
+    }
+    .logo{
+        padding-left: 15px;
+    }
+    .header-banner{
+        padding-top: 8px;
+    }
+    .header-banner h1{
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 38.4px;
+    }
+    .header-banner p{
+        font-size: 18px;
+        line-height: 23.4px;
+        padding-top: 8px;
+    }
+    .title{
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        padding-top: 12px;
+    }
     .cards-container {
         grid-template-columns: 1fr; /* ÐžÐ´Ð½Ð° ÐºÐ¾Ð»Ð¾Ð½ÐºÐ° Ð½Ð° Ð¼Ð¾Ð±Ñ–Ð»ÑŒÐ½Ð¸Ñ… */
         grid-column-gap: 0;
@@ -441,6 +581,7 @@ ul, ol {
     }
     
 }
+
 
 .contacts{
     display: flex;
@@ -594,7 +735,7 @@ ul, ol {
     margin-bottom: 15px;
     color: #ffffff; /* Changed to white */
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.3;
 }
 
 /* Read More Button */
@@ -639,12 +780,13 @@ ul, ol {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
+    text-align: center;
 }
 
 .casino-section h2 {
     color: #ffffff; /* Changed to white */
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .casino-section .btn {
@@ -663,6 +805,7 @@ ul, ol {
 .casino-section ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 10;
 }
 
 .casino-section li {
@@ -676,7 +819,6 @@ ul, ol {
 
 .container {
     width: 60%;
-   
     padding: 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -699,8 +841,6 @@ p {
     line-height: 1.6;
     color: #f1f1f1;
 }
-
-
 
 /* Hero Section Styling */
 .hero {
@@ -745,4 +885,119 @@ p {
     background: rgb(4, 230, 23);
     transform: translateX(-50%) scale(1.05); /* Slight zoom effect */
 }
-
+  /* Footer */
+  .footer {
+    background-color: #000;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    
+    /* FOOTER STYLES */
+    .footer {
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-container {
+        width: 90%;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* FOOTER LINKS */
+    .footer-links {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+    }
+    
+    .footer-column {
+        flex: 1;
+        text-align: left;
+        padding: 0 20px;
+    }
+    
+    .footer-column h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        color: #ff7300 ;
+    }
+    
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+    
+    .footer-column ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .footer-column ul li a:hover {
+        color: #f8c100;
+    }
+    
+    /* NEWSLETTER */
+    .newsletter {
+        text-align: left;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .newsletter-form input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    
+    .newsletter-form button {
+        background-color: #f8c100;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    
+    .newsletter-form button:hover {
+        background-color: #ffcc00;
+    }
+    
+    /* TRUSTED SECTION */
+    .trust-section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    
+    .trust-section img {
+        width: 120px;
+        margin: 10px;
+    }
+    
+    /* COPYRIGHT TEXT */
+    .copyright {
+        font-size: 12px;
+        margin-top: 20px;
+    }
