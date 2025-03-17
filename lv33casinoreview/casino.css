@@ -68,6 +68,14 @@ body {
     align-items: center;
 }
 
+/*banner-container*/
+.banner-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 50px;
+}
 /* Casino Card */
 .casino-card {
     display: flex;
