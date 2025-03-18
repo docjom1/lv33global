@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(190deg, #ff4800, #000000, #ff5e00);
 }
 
 /* Navigation Bar */
@@ -74,11 +74,13 @@ body {
 .hero {
     text-align: center;
     padding: 50px;
-    background: #eeeeee;
+    background: linear-gradient(135deg, #8A2BE2, #ff7b00, #E1306C); 
+    color: white; /* Ensure text is visible */
+    padding-bottom: 5;
 }
 
 .hero h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 10px;
 }
 
@@ -238,7 +240,8 @@ body {
 /* Category Explorer Section */
 .categories {
     padding: 20px;
-    text-align: center;
+    text-align: center; 
+    color: white;
 }
 
 /* Category Grid Layout */
@@ -546,140 +549,317 @@ max-width: 47%;
     color: #ccc; /* Grey color for half effect */
     width: 50%;
     overflow: hidden;
+}
 
 /* Review Score Text */
 .review-text {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #000000;
     margin-left: 8px;
 }
-
 
 /* Show More Button Section */
 .show-more {
     text-align: center;
-    margin: 30px 0;
+    margin: 40px 0;
+    padding-bottom: 0;
 }
 
+/* Show More Button */
 .show-more-btn {
-    background-color: #fff;
-    color: #111;
-    border: 2px solid #111;
-    padding: 12px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.show-more-btn:hover {
-    background-color: #111;
+    background: linear-gradient(135deg, #ff7300, #ff5100);
     color: #fff;
+    border: none;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
 }
 
-.loading-bar {
-    width: 50px;
-    height: 5px;
-    background-color: #007bff;
-    margin: 10px auto;
-    border-radius: 5px;
+/* Hover Effect */
+.show-more-btn:hover {
+    background: linear-gradient(135deg, #ff5100, #ff2500);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* Active Button Click Effect */
+.show-more-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.show-more p {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Loading Bar Animation */
+.loading-bar {
+    width: 60px;
+    height: 6px;
+    background: #007bff;
+    margin: 15px auto;
+    border-radius: 5px;
+    animation: loadingAnimation 1s infinite alternate ease-in-out;
+}
+
+/* Loading Animation */
+@keyframes loadingAnimation {
+    0% {
+        width: 40px;
+        background-color: #ff5100;
+    }
+    100% {
+        width: 80px;
+        background-color: #ff7300;
+    }
+}
+
+/* Hidden Casinos - Initially Hidden */
 .hidden-casino {
     display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .show-more-btn {
+        font-size: 16px;
+        padding: 12px 25px;
+        color: w;
+    }
+
+
+    .loading-bar {
+        width: 40px;
+    }
 }
 
 
 /* Gambling News Section */
 .gambling-news {
-    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 0px;
     padding: 40px 20px;
-    background: #f8f8f8;
+    background-color: #000;
+    color: #fff;
 }
 
+/* Title Styling */
 .gambling-news h2 {
-    font-size: 24px;
+    text-align: left;
+    font-size: 35px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    color: #ff6600;
 }
 
 .gambling-news p {
-    color: #555;
-    font-size: 16px;
+    color: #ffffff;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
-/* News Container */
-.news-container {
+/* News Layout */
+.news-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 10px;
+}
+
+/* Main News (Large Article) */
+.main-news {
+    flex: default;
+    max-width: 380px;
+    width: 100%;
+    background: #111111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.main-news img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.main-news h3 {
+    margin-top: 10px;
+    font-size: 22px;
+    color: #ff4800;
+}
+
+/* Right-Side Section */
+.news-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200%;
+    max-width: 500px;
     gap: 20px;
 }
 
-/* News Card */
-.news-card {
-    width: 300px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
+/* Right-Side News List */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 120%;
+    max-width: 600px;
 }
 
-.news-card:hover {
-    transform: scale(1.03);
+/* Individual News Item */
+.news-item {
+    display: flex;
+    align-items: flex-start; /* Aligns image & text at the top */
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    gap: 15px; /* Adds space between image & text */
 }
 
-.news-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.news-item:hover {
+    background: #333;
 }
 
-.news-content {
-    padding: 15px;
-    text-align: left;
+/* Image Styling */
+.news-item img {
+    width: 100px;
+    height: 80px;
+    border-radius: 5px;
 }
 
-.news-author {
-    font-size: 14px;
-    color: gray;
-    margin-bottom: 5px;
+/* Container for Text (Stacks h4 and p properly) */
+.news-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensures text starts from the top */
+    gap: 3px; /* Space between title and paragraph */
 }
 
-.news-content h3 {
-    font-size: 18px;
+/* News Title */
+.news-item h4 {
+    font-size: 21px;
     font-weight: bold;
+    color: #ffdd44;
+    margin: 0; /* Removes unwanted spacing */
+}
+
+/* News Paragraph */
+.news-item p {
+    font-size: 18px;
+    color: #ddd;
+    margin: 0; /* Ensures no extra spacing */
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Featured News Section (Below Right-Side News List) */
+.featured-news {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #ff6600;
+}
+
+.featured-news h3 {
+    font-size: 22px;
+    color: #ffcc00;
     margin-bottom: 10px;
+    text-align: center;
 }
 
-.news-content p {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
+/* Featured News Grid */
+.featured-news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Corrected syntax */
+    gap: 15px;
 }
 
-.news-time {
-    font-size: 12px;
-    color: gray;
+/* Featured News Item */
+.featured-item {
+    display: flex;
+    align-items: center;
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.featured-item:hover {
+    background: #444;
+}
+
+.featured-item img {
+    width: px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.featured-item p {
+    font-size: 20px;
+    color: #33ff00;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .news-container {
-        flex-direction: column;
-        align-items: center;
+    .featured-news-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 per row on mobile */
     }
 
-    .news-card {
-        width: 90%;
+    .news-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-sidebar {
+        width: 100%;
+        max-width: none;
+    }
+
+    .news-list, .featured-news {
+        width: 100%;
+    }
+
+    .news-item, .featured-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .news-item img, .featured-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
     }
 }
+
 /* Slot Games Section */
 .slot-games {
     margin: 40px auto;
-    max-width: 1200px;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -687,7 +867,7 @@ max-width: 47%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .slot-card {
@@ -748,18 +928,142 @@ max-width: 47%;
 .show-more-slots-btn:hover {
     background: #218838;
 }
-/* Container for Review Items */
+/* Headings */
+section h2 {
+    font-size: 24px;
+    color: #ffffff; /* Bright orange for contrast */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 8px;
+}
+
+/* Paragraphs */
+section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000; /* Light grey for readability */
+    margin-bottom: 15px;
+}
+
+
+/* Container for multiple sections */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Spacing between sections */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+}
+
+/* Main Container */
+.lv33-description {
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 30px;
+    background: #111; /* Dark theme */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    
+}
+
+/* Grid Layout for Review Sections */
+.lv33-description {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 20px;
+}
+
+/* Review Item Styling */
+.lv33-review {
+    background: #222; /* Slightly lighter background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.lv33-review:hover {
+    transform: scale(1.03);
+}
+
+/* Headings */
+.lv33-review h2 {
+    font-size: 20px;
+    color: #ff6600; /* Orange */
+    text-transform: uppercase;
+    border-bottom: 2px solid #ff6600;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Paragraph Styling */
+.lv33-review p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .lv33-description {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .lv33-description {
+        grid-template-columns: repeat(1, 1fr); /* 1 item per row on small screens */
+    }
+}
+
+/* Review Items Grid */
+.review-items-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 5px; /* Adjust spacing between items */
+    max-width: 100%;
+    padding: 10px;
+    padding-top: 0;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+/* Review Item Styling */
 .review-item {
     display: flex;
-    align-items: center;
-    gap: 15px; /* Adjust spacing between image and text */
-    margin-bottom: 20px;
-    max-width: 1500px;
+    align-items: flex-start;
+    gap: 15px; /* Space between image and text */
+    padding: 15px;
+    background: #222; /* Dark background for contrast */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(255, 136, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 136, 0, 0.4);
 }
 
 /* Image Styling */
 .review-item img {
-    width: 120px; /* Adjust size based on your design */
+    width: 120px; /* Adjust image size */
     height: 100px;
     border-radius: 5%;
     object-fit: cover;
@@ -767,27 +1071,49 @@ max-width: 47%;
 
 /* Text Content */
 .review-item-content {
-    flex: 1; /* Takes up remaining space */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Title */
 .review-item h3 {
     font-size: 18px;
     font-weight: bold;
-    margin:  0;
-    color: #ff4800; /* Adjust color if needed */
+    margin-bottom: 5px;
+    color: #ff8800; /* Highlight color */
 }
 
 /* Description */
 .review-item p {
     font-size: 16px;
-    color: #000000;
+    color: #ddd;
     margin: 0;
-    line-height: 1.4;
-    margin-left: 10px; /* Adjust spacing */
+    line-height: 1.5;
 }
-.table-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 10px;
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .review-items-container {
+        grid-template-columns: 1fr; /* Switch to single column on mobile */
+    }
+
+    .review-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .review-item img {
+        width: 100%;
+        max-width: 200px; /* Adjust size for smaller screens */
+        height: auto;
+    }
+
+    .review-item-content {
+        align-items: center;
+        text-align: center;
+    }
 }
