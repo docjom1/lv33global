@@ -72,21 +72,101 @@ body {
 
 /* HERO SECTION */
 .hero {
-    text-align: center;
-    padding: 50px;
-    background: linear-gradient(135deg, #8A2BE2, #ff7b00, #E1306C); 
-    color: white; /* Ensure text is visible */
-    padding-bottom: 5;
+    display: flex; /* Arrange items in a row */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Space between logo and text */
+    gap: 50px; /* Space between horse logo and text */
+    padding: 10px 10%;
+    background: linear-gradient(135deg, #f5f5f5, #ff7b00, #E1306C);
+    color: white;
+    height: 280px; /* Adjust height */
+    position: relative;
 }
 
-.hero h1 {
+/* HERO SECTION */
+.hero {
+    display: flex; /* Arrange items in a row */
+    align-items: left   ; /* Center vertically */
+    justify-content: left; /* Space between logo and text */
+    gap: 50px; /* Space between horse logo and text */
+    padding: 20px 10%;
+    background: linear-gradient(135deg, #F8B76B, #ff7b00, #E1306C);
+    color: white;
+    height: 280px; /* Keep height consistent */
+    position: relative;
+}
+
+/* Horse Logo Container */
+.hero-logo {
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Horse Logo */
+.hero-logo img {
+    width: 400px; /* Keep original size */
+    height: 300px; /* Keep original size */
+    animation: floatAnimation 3s infinite ease-in-out alternate; /* Floating effect */
+    object-fit: contain; /* Ensures image stays within boundaries */
+    padding-top: 50px; /* Adjust vertical position */
+    
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* Hero Text Content */
+.hero-content {
+    display: flex;
+    flex-direction: column; /* Stack items (H1 on top, paragraph below) */
+    justify-content: center;
+    align-items: flex-start; /* Align text to the left */
+    text-align: left; /* Ensure left alignment */
+    max-width: 600px; /* Prevent text from stretching too wide */
+}
+
+/* Title */
+.hero-content h1 {
     font-size: 3em;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reduced margin to bring paragraph closer */
+    text-transform: uppercase;
+    line-height: 1.2; /* Ensure proper spacing */
 }
 
-.hero p {
+/* Paragraph */
+.hero-content p {
     font-size: 1.2em;
+    margin-top: 5px; /* Ensures proper spacing below title */
+    max-width: 600px; /* Prevent text from stretching too wide */
 }
+
+/* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stacks elements for smaller screens */
+        text-align: center;
+        height: auto;
+        gap: 20px;
+    }
+
+    .hero-content {
+        align-items: center;
+        text-align: center; /* Centers text on small screens */
+    }
+
+    .hero-logo img {
+        width: 200px; /* Adjust for mobile */
+        height: 250px; /* Adjust for mobile */
+    }
+}
+
+
 
 
 /* ============================= */
