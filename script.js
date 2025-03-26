@@ -31,3 +31,20 @@ function scrollBanner() {
 
 // Auto-scroll every 5 seconds
 setInterval(scrollBanner, 5000);
+
+
+function showSection(sectionId) {
+    // Remove 'active' from all tabs
+    document.querySelectorAll('.tab-section').forEach(section => {
+      section.classList.remove('active');
+    });
+
+    // Add 'active' to the clicked section
+    document.getElementById(sectionId).classList.add('active');
+
+    // Optional: toggle active class on the nav buttons too
+    document.querySelectorAll('.tabs-nav button').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    document.querySelector(`.tabs-nav button[onclick*="${sectionId}"]`).classList.add('active');
+  }
