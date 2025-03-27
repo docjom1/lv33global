@@ -1,0 +1,430 @@
+/* ===== Base Styles ===== */
+:root {
+    --primary-color: #d4af37; /* Gold - classic casino color */
+    --secondary-color: #1a1a2e; /* Dark navy */
+    --accent-color: #ff3300; /* Rich red */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-dark: #0d0d1a;
+    --bg-light: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+/* ===== Navigation Bar ===== */
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.logo img {
+    height: 60px;
+    transition: var(--transition);
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+/* ===== Search Bar ===== */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5rem;
+    flex-grow: 1;
+    max-width: 500px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    outline: none;
+}
+.search-btn {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.search-btn:hover {
+    background-color: #fc5000;
+}
+/* ===== Navigation Links ===== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Sign Up Button */
+  .sign-up {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    margin-left: 0.5rem;
+  }
+  
+  .sign-up:hover {
+    background-color: #fc5000 ;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ===== Mobile Menu ===== */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 1024px) {
+    .navbar-container {
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+    }
+    
+    .search-bar {
+      order: 3;
+      width: 100%;
+      margin: 0.8rem 0;
+      max-width: 100%;
+    }
+    
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
+    
+    .nav-links a {
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .sign-up {
+      margin: 1rem auto;
+      display: block;
+      width: 80%;
+    }
+    
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo img {
+      height: 50px;
+    }
+    
+    .navbar-container {
+      padding: 0.5rem;
+    }
+  }
+
+  /* ==== HERO SECTION ==== */
+.hero.poker {
+    background: linear-gradient(to right, #1a1a1a, #141414);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 2.75rem;
+    color: #ff4500;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 1.15rem;
+    color: #ccc;
+    margin-top: 10px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  
+  /* ==== REVIEW SECTION ==== */
+  .review-section {
+    padding: 40px 20px;
+    background: #111;
+  }
+  
+  .review-section h2 {
+    color: #ffd700;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .review-card {
+    background: #2167ff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    border-color: #ff4500;
+  
+  }
+  
+  .review-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .review-card img {
+    width: 90%;
+    height: 120px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-color: #ff4500;
+  }
+  
+  .review-card h3 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .review-card .rating {
+    font-weight: bold;
+    color: #4caf50;
+    margin-top: 10px;
+  }
+  
+  .visit-btn {
+    background: #ff4500;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+  }
+  
+  .visit-btn:hover {
+    background: #e63900;
+  }
+  
+  /* ==== TUTORIAL SECTION ==== */
+  .tutorial-section {
+    padding: 40px 20px;
+    background: #141414;
+  }
+  
+  .tutorial-section h2 {
+    color: #00bcd4;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .tutorial-section article {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .tutorial-section ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-top: 15px;
+  }
+  
+  .tutorial-section li {
+    margin-bottom: 10px;
+    color: #ccc;
+  }
+  
+  /* ==== HISTORY SECTION ==== */
+  .history-section {
+    background: #1a1a1a;
+    padding: 40px 20px;
+  }
+  
+  .history-section h2 {
+    color: #ffa500;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* ==== RECOMMENDED SITES ==== */
+  .recommended-section {
+    background: #111;
+    padding: 60px 20px;
+  }
+  
+  .recommended-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ff5e00;
+    font-size: 2rem;
+  }
+  
+  .site-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+  }
+  
+  .site-box {
+    background: #222;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .site-box:hover { 
+    transform: translateY(-6px);
+  } 
+
+  .site-box h4 {
+    margin-top: 5px;
+    color: #fff;
+    font-size: 1.1rem;
+  }
+  
+  .site-box p {
+    color: #bbb;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .site-box img {
+   max-width: 150px;
+   max-height: 80px;
+   object-fit: cover;
+   margin-bottom: 15px;
+   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  
+  /* ==== AI TIPS SECTION ==== */
+  .ai-section {
+    background: #131313;
+    padding: 30px 20px;
+  }
+  
+  .ai-section h2 {
+    text-align: left;
+    color: #9c27b0;
+    margin-bottom: 20px;
+  }
+  
+  .ai-section p {
+    color: #ccc;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .ai-tips li {
+    margin: 10px 0;
+    color: #e0e0e0;
+    padding-left: 20px;
+    position: relative;
+    justify-content: center;
+  }
+  
+  .ai-tips li::before {
+    content: '\2714';
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+  }
+  
+  /* ==== FOOTER ==== */
+  .footer {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 40px;
+  }
+  
