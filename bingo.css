@@ -1,0 +1,1018 @@
+/* ===== Base Styles ===== */
+:root {
+    --primary-color: #d4af37; /* Gold - classic casino color */
+    --secondary-color: #1a1a2e; /* Dark navy */
+    --accent-color: #ff3300; /* Rich red */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-dark: #0d0d1a;
+    --bg-light: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+/* ===== Navigation Bar ===== */
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.logo img {
+    height: 60px;
+    transition: var(--transition);
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+/* ===== Search Bar ===== */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5rem;
+    flex-grow: 1;
+    max-width: 500px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    outline: none;
+}
+.search-btn {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.search-btn:hover {
+    background-color: #fc5000;
+}
+/* ===== Navigation Links ===== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Sign Up Button */
+  .sign-up {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    margin-left: 0.5rem;
+  }
+  
+  .sign-up:hover {
+    background-color: #fc5000 ;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ===== Mobile Menu ===== */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 1024px) {
+    .navbar-container {
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+    }
+    
+    .search-bar {
+      order: 3;
+      width: 100%;
+      margin: 0.8rem 0;
+      max-width: 100%;
+    }
+    
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
+    
+    .nav-links a {
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .sign-up {
+      margin: 1rem auto;
+      display: block;
+      width: 80%;
+    }
+    
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo img {
+      height: 50px;
+    }
+    
+    .navbar-container {
+      padding: 0.5rem;
+    }
+  }
+
+  /* Page Header Styling */
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #1E293B, #0F172A, #955d1d); /* Gradient with lighter effect */
+  padding: 70px  390px;
+  border-radius: 0;
+  color: white;
+}
+
+/* Ensure content is above the gradient */
+.page-header-img {
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading & Description */
+.page-header-heading {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.neo-fs-25 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.c-white {
+  color: white;
+}
+
+.desc {
+  font-size: 16px;
+  opacity: 0.85;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 500px;
+}
+
+/* Page Header Image */
+.page-header-img {
+  flex: 1;
+  text-align: right;
+  min-width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .page-header {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+  }
+
+  .page-header-heading {
+      text-align: center;
+  }
+
+  .desc {
+      text-align: center;
+      max-width: 100%;
+  }
+
+  .page-header-img {
+      text-align: center;
+      margin-top: 20px;
+  }
+}
+
+/* Crime Section Styles */
+  .crime-section {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background-color: transparent; /* Light background for contrast */
+  }
+  
+  .container {
+      max-width: 1200px; /* Limit the width of the container */
+      margin: 0 auto; /* Center the container */
+      padding: 0 20px; /* Add horizontal padding */
+  }
+  
+  .section-wrapper {
+      margin-bottom: 20px; /* Space below the heading */
+  }
+  
+  .section-wrapper h2 {
+      font-size: 20px; /* Font size for the section title */
+      color: white; /* Dark text color */
+      text-align: left;
+      left: 2%;
+      position: relative;
+  }
+  
+  .crime-wrapper {
+      display: flex; /* Use flexbox for layout */
+      justify-content: space-between; /* Space items evenly */
+      flex-wrap: wrap; /* Allow items to wrap to the next line */
+  }
+  
+  .crime-items {
+      background-color: #ffffff; /* White background for items */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      margin: 10px; /* Space between items */
+      padding: 8px; /* Padding inside items */
+      flex: 1 1 calc(30% - 20px); /* Responsive width */
+      display: flex; /* Flexbox for inner content */
+      justify-content: space-between; /* Space between content and button */
+      align-items: center; /* Center items vertically */
+      transition: transform 0.3s; /* Smooth scaling on hover */
+  }
+  
+  .crime-items:hover {
+      transform: scale(1.05); /* Scale up on hover */
+  }
+  
+  .cirme-wrap {
+      display: flex; /* Flexbox for content */
+      align-items: center; /* Center content vertically */
+  }
+  
+  .crime-image {
+      width: 70px; /* Set a fixed width for the image */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 5px; /* Rounded corners for the image */
+      margin-right: 15px; /* Space between image and text */
+  }
+  
+  .crime-content h6 {
+      font-size: 18px; /* Font size for game title */
+      margin: 0; /* Remove default margin */
+      color: #007bff; /* Primary color for titles */
+  }
+  
+  .crime-content p {
+      margin: 5px 0 0; /* Margin for description */
+      color: #666; /* Lighter color for description */
+  }
+  
+  .cmn--btn {
+      background-color: orangered; /* Primary button color */
+      color: white; /* Text color for button */
+      padding: 10px 15px; /* Padding for button */
+      border-radius: 5px; /* Rounded corners */
+      transition: background-color 0.3s; /* Smooth background color change */
+  }
+  
+  .cmn--btn:hover   {
+    background-color: orangered; /* Darker shade on hover */
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .crime-items {
+            flex: 1 1 100%; /* Full width on smaller screens */
+        
+    }
+}
+
+
+/* Activity Screen Section */
+.activity-screen {
+    padding: 10px 0;
+    background-color: transparent; /* Dark background */
+    text-align: center;
+    justify-content: center;
+}
+
+.screen-title h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 2%;
+}
+
+/* Activity Row - Horizontal Layout */
+.activity-row {
+    display: flex;
+    justify-content: center; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px; /* Space between items */
+}
+
+/* Small Cards (Left & Right) */
+.small-card {
+    flex: 1; /* Makes both cards the same size */
+    max-width: 305px;
+    min-width: 250px;
+}
+
+/* Large Middle Jackpot Card */
+.large-card {
+    flex: 2; /* Makes the middle card bigger */
+    max-width: 500px; /* Controls the max size */
+}
+
+/* Individual Activity Card */
+.screen-items {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.screen-items:hover {
+    transform: scale(1.05);
+}
+
+.screen-items {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Styling */
+.screen-items img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+/* Overlay Effect */
+.screen-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 1;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Overlay Content */
+.screen-overlay h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.theme-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00; /* Gold Winning Amount */
+}
+
+.screen-overlay p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #c5c5c5;
+}
+
+.screen-overlay p span {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Jackpot Center Card (with full image background) */
+.jackpot-card {
+    flex: 2; /* Makes it bigger than the side cards */
+    max-width: 490px;
+    text-align: center;
+    background: url('Img/images-8.jpg') center/cover no-repeat; /* Background image */
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    height: 173px
+    
+}
+
+/* Dark overlay to improve text readability */
+.jackpot-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    border-radius: 15px;
+}
+
+/* Ensures content is above overlay */
+.jackpot-card h5,
+.jackpot-card .jackpot-amount,
+.jackpot-card {
+    position: relative;
+    z-index: 1;
+}
+
+/* Jackpot Text */
+.jackpot-card h5 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.jackpot-amount {
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.jackpot-card:hover {
+    transform: scale(1.05); /* Slightly increases the size */
+}
+
+.jackpot-card {
+    transition: transform 0.3s ease-in-out; /* Makes it smooth */
+}
+
+/* Play Button */
+.play-btn {
+    background: linear-gradient(135deg, #ff8c00, #ff5e00);
+    padding: 12px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.play-btn:hover {
+    background: linear-gradient(135deg, #ff5e00, #ff8c00);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .activity-row {
+        flex-direction: column;
+    }
+    .small-card,
+    .large-card {
+        max-width: 100%;
+    }
+
+    .jackpot-card {
+        max-width: 100%;
+    }
+
+    .left-title {
+        text-align: center;
+    }
+}
+
+.bingo-section {
+    padding: 30px 20px;
+    background-color: #0a0a0a;
+  }
+  
+  .bingo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+  
+  .bingo-text {
+    flex: 1;
+  }
+  
+  .bingo-text h2 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .bingo-text p {
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  
+  .bingo-box {
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .bingo-header {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .bingo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .bingo-item img {
+    height: 80px;
+    max-width: 150px;
+    width: 100%;
+  }
+  
+  .play-btn {
+    background-color: #e53935;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .play-btn:hover {
+    background-color: #c62828;
+  }
+  
+  .bingo-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 15px;
+  }
+  
+  .bingo-footer {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .cta-btn {
+    background-color: #0057b7;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s;
+  }
+  
+  .cta-btn:hover {
+    background-color: #003e91;
+  }
+
+  @media (min-width: 900px) {
+    .bingo-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+}
+  
+
+/* Content Container */
+.content {
+    max-width: 1200px;
+    margin: auto;
+    background: transparent;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.content-Title h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+/* Paragraphs & Text */
+.content-Title p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: white;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.mb-3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: transparent;
+    border-radius: 8px; 
+    text-align: justify;
+}
+
+/* Image styling */
+.mb-3 picture {
+    flex-shrink: 0;
+}
+
+.mb-3 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Text styling */
+.mb-3 p {
+    font-size: 14px;
+    color: white;
+    margin: 0;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Strong text emphasis */
+.mb-3 p strong {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mb-3 {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .mb-3 picture {
+        margin-bottom: 10px;
+    }
+
+    .mb-3 img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.container-section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    max-width: 1200px;
+    text-align: left;
+    margin-left: 1%;
+}
+
+.content-section h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.content-section p {
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.comparison-section {
+  padding: 40px 20px;
+  max-width: 1170px;
+  margin: auto;
+}
+
+.comparison-section h2 {
+  color: white;
+  font-size: 20px;
+}
+
+.comparison-section p{
+  color: rgb(255, 255, 255);
+  font-size: 14px;margin-top: 20px;
+}
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+  border-color: #e53935;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: transparent;
+  color: black;
+}
+
+ td {
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  color: #0d0d1a;
+  font-weight: bold;
+}
+th {
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  color: #ff3c00;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3f7fb;
+}
+
+.alt-row {
+  background-color: #fc7100;
+}
+
+.logo {
+  width: 200px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.checkmark {
+  font-size: 20px;
+  color: green;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #e50914;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.review-link {
+  display: block;
+  color: #00468c;
+  font-size: 13px;
+  text-decoration: underline;
+  margin-top: 4px;
+}
+
+/* ===== Footer Section ===== */
+.footer {
+  background: #0a0a12;
+  padding: 3rem 2rem 1rem;
+  color: white;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-column h3 {
+  color: #d4af37;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #d4af37;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 4px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.newsletter-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #d4af37;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #f1c40f;
+}
+
+.trust-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.trust-section img {
+  height: 40px;
+  filter: grayscale(100%) brightness(1.5);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.trust-section img:hover {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+}
+
+.copyright {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .news-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .news-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .featured-news-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-news-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-section img {
+    height: 30px;
+  }
+}
