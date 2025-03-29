@@ -201,7 +201,7 @@ body {
   /* ===== Hero Section ===== */
 .hero {
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(0, 0, 20, 0.95) 100%), 
-                url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+                url('https://i.ibb.co/VK09ZX4/Untitled-design-2.png') no-repeat center center;
     background-size: cover;
     min-height: 500px;
     display: flex;
