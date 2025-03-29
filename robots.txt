@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dojom1.github.io/lv33global/sitemap.xml
