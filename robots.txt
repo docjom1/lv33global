@@ -1,3 +1,5 @@
 User-agent: *
+Disallow: /404.html
 Allow: /
-Sitemap: https://dojom1.github.io/lv33global/sitemap.xml
+
+Sitemap: https://www.lv33global.com/sitemap.xml
