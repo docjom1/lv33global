@@ -1,0 +1,31 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Generate Sitemap
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          find . -name '*.html' | grep -vE '404|error|offline' | sed 's|^./||' | while read file; do
+            echo "  <url><loc>https://www.lv33global.com/${file}</loc></url>" >> sitemap.xml
+          done
+          echo '</urlset>' >> sitemap.xml
+
+      - name: Commit and Push Sitemap
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add sitemap.xml
+          git commit -m '🤖 Auto-update sitemap.xml [skip ci]' || echo "No changes"
+          git push
