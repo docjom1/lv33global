@@ -16,12 +16,24 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Generate Sitemap
+      - name: Generate Sitemap with Metadata
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
           find . -name '*.html' | grep -vE '404|error|offline' | sed 's|^./||' | while read file; do
-            echo "  <url><loc>https://www.lv33global.com/${file}</loc></url>" >> sitemap.xml
+            lastmod=$(git log -1 --format="%ad" --date=iso "$file")
+            if [[ "$file" == "index.html" ]]; then
+              priority=1.0
+            elif [[ "$file" == *"contact"* ]]; then
+              priority=0.5
+            else
+              priority=0.8
+            fi
+            echo "  <url>" >> sitemap.xml
+            echo "    <loc>https://www.lv33global.com/${file}</loc>" >> sitemap.xml
+            echo "    <lastmod>${lastmod}</lastmod>" >> sitemap.xml
+            echo "    <priority>${priority}</priority>" >> sitemap.xml
+            echo "  </url>" >> sitemap.xml
           done
           echo '</urlset>' >> sitemap.xml
 
@@ -30,5 +42,10 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add sitemap.xml
-          git commit -m '🤖 Auto-update sitemap.xml [skip ci]' || echo "No changes"
+          git commit -m '🤖 Auto-update sitemap.xml with lastmod & dynamic priority [skip ci]' || echo "No changes"
           git push
+
+      - name: Ping Google and Bing
+        run: |
+          curl https://www.google.com/ping?sitemap=https://www.lv33global.com/sitemap.xml
+          curl https://www.bing.com/ping?sitemap=https://www.lv33global.com/sitemap.xml
