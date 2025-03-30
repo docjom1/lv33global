@@ -20,8 +20,9 @@ jobs:
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
-          find . -name '*.html' | grep -vE '404|error|offline' | sed 's|^./||' | while read file; do
-            lastmod=$(git log -1 --format="%ad" --date=iso "$file")
+
+          for file in $(find . -name '*.html' | grep -vE '404|error|offline' | sed 's|^./||'); do
+            lastmod=$(git log -1 --format="%ad" --date=iso "$file" || date -I)
             if [[ "$file" == "index.html" ]]; then
               priority=1.0
             elif [[ "$file" == *"contact"* ]]; then
@@ -35,6 +36,7 @@ jobs:
             echo "    <priority>${priority}</priority>" >> sitemap.xml
             echo "  </url>" >> sitemap.xml
           done
+
           echo '</urlset>' >> sitemap.xml
 
       - name: Commit and Push Sitemap
