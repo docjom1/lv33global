@@ -1,0 +1,412 @@
+/* ===== Base Styles ===== */
+:root {
+    --primary-color: #d4af37; /* Gold - classic casino color */
+    --secondary-color: #1a1a2e; /* Dark navy */
+    --accent-color: #ff3300; /* Rich red */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-dark: #0d0d1a;
+    --bg-light: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+/* ===== Navigation Bar ===== */
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.logo img {
+    height: 60px;
+    transition: var(--transition);
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+/* ===== Search Bar ===== */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5rem;
+    flex-grow: 1;
+    max-width: 500px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    outline: none;
+}
+.search-btn {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.search-btn:hover {
+    background-color: #fc5000;
+}
+/* ===== Navigation Links ===== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Sign Up Button */
+  .sign-up {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    margin-left: 0.5rem;
+  }
+  
+  .sign-up:hover {
+    background-color: #fc5000 ;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ===== Mobile Menu ===== */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 1024px) {
+    .navbar-container {
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+    }
+    
+    .search-bar {
+      order: 3;
+      width: 100%;
+      margin: 0.8rem 0;
+      max-width: 100%;
+    }
+    
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
+    
+    .nav-links a {
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .sign-up {
+      margin: 1rem auto;
+      display: block;
+      width: 80%;
+    }
+    
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo img {
+      height: 50px;
+    }
+    
+    .navbar-container {
+      padding: 0.5rem;
+    }
+  }
+
+
+  
+  /* ==== Container ==== */
+  .container {
+    display: flex;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  
+  /* ==== Main Content ==== */
+  .main-content {
+    flex: 2;
+    min-width: 60%;
+  }
+  
+  .main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .meta {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .category {
+    background-color: #ffc107;
+    color: #000;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  
+  .content h2 {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content p {
+    margin-bottom: 1rem;
+  }
+  
+  /* ==== Legalization Impact Section ==== */
+  .legalization-impact {
+    margin-top: 2rem;
+  }
+  
+  .legalization-impact ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  .legalization-impact li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* ==== Sidebar ==== */
+  .sidebar {
+    flex: 1;
+    min-width: 30%;
+  }
+  
+  .sidebar h3 {
+    font-size: 1.4rem;
+    color: #f4c542;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sidebar-card {
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sidebar-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .sidebar-card h4 a {
+    color: #00bcd4;
+    text-decoration: none;
+  }
+  
+  .sidebar-card h4 a:hover {
+    text-decoration: underline;
+  }
+  
+  .sidebar-card .meta {
+    font-size: 0.85rem;
+    color: #bbb;
+    margin: 0.5rem 0;
+  }
+  
+  .sidebar-card p {
+    color: #ccc;
+  }
+  
+  /* ==== Small Cards ==== */
+  .small-card {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .small-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 5px;
+  }
+  
+  .small-card-info h5 {
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    color: #fff;
+  }
+  
+  .small-card-info .meta {
+    font-size: 0.75rem;
+    color: #bbb;
+  }
+  
+  /* ==== Social Widget ==== */
+  .social-widget {
+    background-color: #1a1a2e;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+  }
+  
+  .social-widget h3 {
+    font-size: 1.2rem;
+    color: #f4c542;
+    margin-bottom: 1rem;
+  }
+  
+  .social-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+  }
+  
+  .social-row i {
+    font-size: 1.2rem;
+    width: 25px;
+  }
+  
+  .social-row a {
+    color: #00bcd4;
+    text-decoration: none;
+  }
+  
+  .social-row a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ==== Topics ==== */
+  .topic {
+    margin-top: 2rem;
+  }
+  
+  .topic h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #f4c542;
+  }
+  
+  .topics a {
+    display: inline-block;
+    margin: 0.25rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #282843;
+    border-radius: 5px;
+    color: #00bcd4;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  
+  .topics a:hover {
+    background-color: #35356c;
+  }
+  
+  @media (max-width: 992px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .main-content,
+    .sidebar {
+      min-width: 100%;
+    }
+  }
+  
