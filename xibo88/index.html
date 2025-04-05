@@ -576,7 +576,83 @@
   });
 </script>
 
+<!-- TAB 5 -->
+<section id="discussion" class="tab-section">
+  <h1>Xibo88 AU Player Discussion</h1>
+  <p>Got questions, tips, or a win to share? Start the convo and connect with fellow Aussie players. Whether it's bonuses, payouts, or your latest jackpot—let’s make this the go-to spot for Xibo88 players! 🇦🇺</p>
 
+  <!-- Add New Discussion -->
+  <div class="discussion-form">
+    <form id="discussionForm">
+      <input type="text" id="discussionUser" placeholder="Your name or nickname" required />
+      <textarea id="discussionMessage" placeholder="What’s on your mind?" required></textarea>
+      <button type="submit">Post Discussion</button>
+    </form>
+  </div>
+
+  <!-- Thread List -->
+  <div class="discussion-threads" id="discussionThreads">
+    <div class="discussion-post">
+      <div class="avatar">J</div>
+      <div class="post-content">
+        <div class="user-meta">
+          <strong>jackpotjoey</strong> <span class="badge">Moderator 🇦🇺</span> <span class="time">🕒 3 days ago</span>
+        </div>
+        <p>Welcome to the Xibo88 community! Feel free to chat about games, promos, or anything casino-related. Let’s keep it friendly and helpful! 🎰</p>
+        <div class="post-actions">👍 2</div>
+      </div>
+    </div>
+
+    <div class="discussion-post">
+      <div class="avatar">S</div>
+      <div class="post-content">
+        <div class="user-meta">
+          <strong>spinqueen</strong> <span class="badge">Player 🇦🇺</span> <span class="time">🕒 1 week ago</span>
+        </div>
+        <p>Anyone else using PayID for cashouts? Mine hit my NAB account in under 15 minutes. Top notch!</p>
+        <div class="post-actions">👍 4</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ JS Logic -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('discussionForm');
+    const threads = document.getElementById('discussionThreads');
+    const userInput = document.getElementById('discussionUser');
+    const msgInput = document.getElementById('discussionMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = userInput.value.trim();
+      const msg = msgInput.value.trim();
+      if (!name || !msg) return;
+
+      const avatar = name.charAt(0).toUpperCase();
+      const post = document.createElement('div');
+      post.className = 'discussion-post';
+      post.innerHTML = `
+        <div class="avatar">${avatar}</div>
+        <div class="post-content">
+          <div class="user-meta">
+            <strong>${name}</strong> <span class="badge">New 🇦🇺</span>
+            <span class="time">🕒 just now</span>
+          </div>
+          <p>${msg}</p>
+          <div class="post-actions">👍 0</div>
+        </div>
+      `;
+      threads.prepend(post);
+      form.reset();
+    });
+  });
+</script>
+
+
+
+    
 <!-- TAB 6 -->
 <section id="payments" class="tab-section">
   <h1>Xibo88 Payment Methods (Australia)</h1>
