@@ -21,17 +21,32 @@ jobs:
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          for file in $(find . -name '*.html' | grep -vE '404|error|offline' | sed 's|^./||'); do
+          base_url="https://www.lv33global.com"
+
+          find . -type f -name "*.html" | grep -vE '404|error|offline' | while read file; do
+            path=${file#./}
+            dir=$(dirname "$path")
             lastmod=$(git log -1 --format="%ad" --date=iso "$file" || date -I)
-            if [[ "$file" == "index.html" ]]; then
+
+            # Convert index.html to directory URL (SEO-friendly)
+            if [[ "$path" == */index.html ]]; then
+              url="${base_url}/${dir}/"
               priority=1.0
-            elif [[ "$file" == *"contact"* ]]; then
-              priority=0.5
+            elif [[ "$path" == "index.html" ]]; then
+              url="${base_url}/"
+              priority=1.0
             else
+              url="${base_url}/${path}"
               priority=0.8
             fi
+
+            # Lower priority for contact/about/etc.
+            if [[ "$path" == *"contact"* || "$path" == *"about"* ]]; then
+              priority=0.5
+            fi
+
             echo "  <url>" >> sitemap.xml
-            echo "    <loc>https://www.lv33global.com/${file}</loc>" >> sitemap.xml
+            echo "    <loc>${url}</loc>" >> sitemap.xml
             echo "    <lastmod>${lastmod}</lastmod>" >> sitemap.xml
             echo "    <priority>${priority}</priority>" >> sitemap.xml
             echo "  </url>" >> sitemap.xml
