@@ -1,88 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.lv33global.com/slots/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/news3/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://www.lv33global.com/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/casino-bonuses/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/aboutus/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/giveaways/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/xibo88/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/poker/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/news/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/bingo/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/betting/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/tcl99bdt/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/strategy/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/news1/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.lv33global.com/tcl99th/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.lv33global.com/casino/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/slots/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/strategy/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/poker/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/bingo/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/betting/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/casino-bonuses/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/giveaways/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/aboutus/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/news/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/news1/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/news3/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.lv33global.com/majubaji/</loc>
-    <lastmod>2025-04-05 15:38:59 +0700</lastmod>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/tc99bdt/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/tc99ph/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.lv33global.com/xibo88/</loc>
+    <lastmod>2025-04-05T08:38:59+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 </urlset>
