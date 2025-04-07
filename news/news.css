@@ -328,26 +328,72 @@ body {
     color: white; /* or any color you want */
 }
 
-/* Responsive Layout */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+    /* Container and Title */
+    .container {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    .content-title {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .content-title h1 {
+        font-size: 20px;
+    }
+
+    /* Grid Layout: Stack Columns */
     .news-grid {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-  
+
+    /* Featured Article */
+    .featured h2 a {
+        font-size: 16px;
+    }
+
+    .featured p {
+        font-size: 14px;
+    }
+
+    .meta {
+        font-size: 12px;
+    }
+
+    /* Articles Grid: Stack in single column */
     .grid-articles {
-      grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
-  
+
+    .article h4 a {
+        font-size: 14px;
+    }
+
+    .meta-date {
+        font-size: 11px;
+    }
+
+    /* Sidebar */
     .sidebar {
-      margin-top: 20px;
+        padding: 10px;
+        margin-top: 20px;
     }
-  }
-  
-  @media (max-width: 600px) {
-    .grid-articles {
-      grid-template-columns: 1fr;
+
+    .sidebar h3 {
+        font-size: 15px;
+    }
+
+    .recent-list li h4 {
+        font-size: 13px;
+    }
+
+    .dot-text::before {
+        font-size: 16px;
     }
 }
+
 
   
 .container-section {
@@ -465,42 +511,71 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Main container: stack into single column */
     .container-section {
-      display: block;
-      padding: 0 12px;
-      margin: 20px auto;
+        grid-template-columns: 1fr;
+        padding: 0 15px;
     }
-  
+
+    /* Featured Article */
+    .featured-article {
+        margin-top: 30px;
+    }
+
+    .featured-article .overlay {
+        padding: 8px;
+        font-size: 14px;
+    }
+
     .featured-article .overlay h2 {
-      font-size: 1.2rem;
+        font-size: 1rem;
     }
-  
+
     .tag {
-      font-size: 0.65rem;
-      padding: 3px 6px;
+        font-size: 0.7rem;
+        padding: 3px 6px;
     }
-  
+
+    /* Bottom articles: stack or wrap into full width */
     .bottom-articles {
-      flex-direction: column;
-      gap: 12px;
+        flex-direction: column;
+        gap: 16px;
     }
-  
+
     .article-card {
-      min-width: 100%;
+        min-width: 100%;
     }
-  
+
+    .article-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Sidebar adjustments */
     .sidebar {
-      margin-top: 24px;
+        margin-top: 30px;
     }
-  
+
+    .sidebar-article img {
+        margin-top: 20px;
+    }
+
+    .sidebar-article .overlay {
+        padding: 10px;
+    }
+
     .sidebar-article .overlay p {
-      font-size: 0.8rem;
+        font-size: 0.8rem;
     }
-  
+
+    .sidebar-card {
+        padding: 10px;
+    }
+
     .sidebar-card p {
-      font-size: 0.8rem;
+        font-size: 0.8rem;
     }
 }
+
 
 
 .content-section {
@@ -557,11 +632,6 @@ body {
     margin: 0;
 }
 
-.news-card p {
-    font-size: 12px;
-    color: #333;
-    margin-top: 10px;
-}
 
 @media (max-width: 600px) {
     .content-section {
