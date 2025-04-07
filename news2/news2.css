@@ -266,6 +266,73 @@ body {
     line-height: 1.4;
 }
 
+@media (max-width: 768px) {
+    /* Stack container layout */
+    .container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .main-content,
+    .sidebar {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    /* Headings */
+    .main-content h2 {
+        font-size: 18px;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    /* Meta and category tag */
+    .meta-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 4px 8px;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .meta-wrapper .meta {
+        font-size: 12px;
+    }
+
+    .main-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Content text */
+    .content p,
+    .main-content > p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Quote block */
+    .quote-block {
+        font-size: 13px;
+        padding-left: 12px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    .quote-block p {
+        margin-bottom: 10px;
+    }
+}
+
 .sidebar h3 {
     background: #0a0a23;
     color: #fff;
@@ -436,6 +503,105 @@ body {
     color: #333;
     border: 1px solid black;
 }
+
+@media (max-width: 768px) {
+    /* Sidebar Title */
+    .sidebar h3,
+    .social-widget h3 {
+        font-size: 15px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Sidebar Card */
+    .sidebar-card {
+        margin-bottom: 30px;
+    }
+
+    .sidebar-card img {
+        height: auto;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-card h4 a {
+        font-size: 15px;
+        line-height: 1.4;
+        display: block;
+    }
+
+    .sidebar-card p {
+        font-size: 13px;
+        line-height: 1.5;
+        padding-bottom: 30px;
+    }
+
+    /* Small Card */
+    .small-card {
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 15px;
+    }
+
+    .small-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .small-card-info h5 {
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    .small-card-info .meta {
+        font-size: 11px;
+    }
+
+    /* Social Widget */
+    .social-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 12px;
+        gap: 6px;
+        font-size: 13px;
+    }
+
+    .social-row i {
+        font-size: 15px;
+    }
+
+    .social-row a {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+        font-size: 13px;
+    }
+
+    /* Topics */
+    .topic {
+        margin-top: 30px;
+    }
+
+    .topic h4 {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .topics {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .topics a {
+        width: 100%;
+        max-width: 260px;
+        font-size: 13px;
+        text-align: center;
+        padding: 6px 10px;
+    }
+}
+
 
 /* ===== Footer Section ===== */
 .footer {
