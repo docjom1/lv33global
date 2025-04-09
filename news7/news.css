@@ -287,6 +287,59 @@ body {
     margin-top: 30px;
 }
 
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .main-content,
+    .sidebar {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .main-content h2 {
+        font-size: 18px;
+    }
+
+    .main-content h3 {
+        font-size: 15px;
+    }
+
+    .content p,
+    .main-content > p {
+        font-size: 13px;
+    }
+
+    .main-content ul li {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        gap: 10px;
+    }
+
+    .main-content h2 {
+        font-size: 16px;
+    }
+
+    .main-content h3 {
+        font-size: 14px;
+    }
+
+    .main-content ul {
+        padding-left: 1rem;
+        font-size: 13px;
+    }
+
+    .main-content ul li {
+        font-size: 13px;
+    }
+}
 /* ================= Sidebar Styles ================= */
 .sidebar h3 {
     font-size: 18px;
