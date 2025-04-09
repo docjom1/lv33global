@@ -184,10 +184,108 @@ body {
 }
 
 
-/* Mobile (768px and below) */
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.main-content, .sidebar {
+    background: transparent;
+    padding: 20px;
+    border-radius: 0px;
+}
+
+.main-content {
+    width: 65%;
+}
+
+.sidebar {
+    width: 30%;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.content p,
+.main-content > p {
+    color: white;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.main-content h2 {
+    margin: 0 auto;
+    font-size: 20px;
+    color: white;
+    margin-top: 10px;
+}
+
+.main-content h3 {
+    margin: 0 auto;
+    font-size: 16px;
+    color: white;
+    margin-top: 30px;
+}
+
+.main-content ul{
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.main-content ul li {
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.main-content blockquote {
+    border-left: 4px solid orangered;
+    padding-left: 16px;
+    margin: 1em 0;
+    color: #e0e0e0;
+}
+
+.styled-hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc; /* Dark gray line */
+    margin: 40px 0; /* Spacing above and below */
+    width: 100%; /* Width of the line */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+    .main-content {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Mobile Devices (768px and below) */
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
+    }
+
+    .main-content,
+    .sidebar {
+        padding: 15px;
     }
 
     .main-content h2 {
@@ -210,18 +308,14 @@ body {
 
     .main-content blockquote {
         font-size: 13px;
+        padding-left: 14px;
     }
 }
 
-/* Small Mobile (480px and below) */
+/* Small Mobile Devices (480px and below) */
 @media (max-width: 480px) {
     .container {
         margin-top: 20px;
-    }
-
-    .main-content,
-    .sidebar {
-        padding: 15px;
     }
 
     .main-content h2 {
@@ -238,8 +332,8 @@ body {
     }
 
     .main-content blockquote {
-        padding-left: 12px;
         font-size: 12px;
+        padding-left: 12px;
     }
 }
 
