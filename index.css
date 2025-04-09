@@ -243,7 +243,7 @@ body {
   }
   
   .hero h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
@@ -332,6 +332,8 @@ body {
       font-size: 0.9rem;
     }
   }
+
+
 
 /* ===== Casino Slider Section ===== */
 .casino-slider {
@@ -522,16 +524,27 @@ body {
     background-color: var(--bg-dark);
     padding: 3rem 2rem;
     text-align: center;
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
-  }
+    overflow-x: auto;
+}
+
   
-  .categories h2 {
-    color: var(--primary-color);
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
+.categories h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.categories p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
   
   .category-grid {
     display: flex;
@@ -573,7 +586,32 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-  
+
+  .casino-reviews p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.casino-reviews p {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.8s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
   .casino-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1054,6 +1092,19 @@ body {
     margin-bottom: 1.5rem;
     text-transform: uppercase;
   }
+
+  .slot-games p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+  
   
   .slot-container {
     display: grid;
@@ -1162,6 +1213,7 @@ body {
     padding: 0 2rem 3rem;
   }
   
+  
   .review-item {
     background: #1a1a2e;
     border-radius: 8px;
@@ -1238,7 +1290,41 @@ body {
   .footer-column a:hover {
     color: #d4af37;
   }
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+  }
   
+  .footer-bottom h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .footer-bottom a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .footer-bottom a:hover {
+    text-decoration: underline;
+    color: #ffc107;
+  }
+  
+
   .newsletter-form input {
     width: 100%;
     padding: 0.8rem;
