@@ -583,6 +583,27 @@ body {
     color: #fff;
 }
 
+.overlay a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.overlay p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.overlay:hover {
+    background-color: black;
+}
+
+.overlay a:hover {
+    color: var(--primary-color); /* Gold tone if you're using CSS variables */
+}
+
 .sidebar-card {
     border: 1px solid #ddd;
     padding: 12px;
