@@ -562,16 +562,26 @@ body {
     position: relative;
 }
 
+.sidebar-article a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
 .sidebar-article  img {
     width: 100%;
     height: auto;
     display: block;
     margin-top: 40px;
+    transition: transform 0.3s ease;
 }
 
 .sidebar-article .overlay {
     position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.75);
     padding: 12px;
