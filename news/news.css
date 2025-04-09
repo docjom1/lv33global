@@ -600,6 +600,13 @@ body {
     background-color: black;
 }
 
+.overlay:hover p{
+    text-decoration: none;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1.3px;
+    color: #ccc;
+}
+
 .overlay a:hover {
     color: var(--primary-color); /* Gold tone if you're using CSS variables */
 }
