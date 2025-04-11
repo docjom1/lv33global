@@ -198,397 +198,468 @@ body {
     }
   }
 
-  /* ===== Betting Page Styles ===== */
-body {
-    background-color: #0a0a12;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
+  /* ===== Poker Site Styles ===== */
+:root {
+    --primary: #d4af37;
+    --bg-dark: #0c0b12;
+    --bg-deep: #16141f;
+    --bg-gradient: linear-gradient(to bottom, #121010, #0c0b12);
+    --text-light: #ffffff;
+    --text-soft: #e0e0e0;
+    --accent: #ff3f00;
+    --transition: all 0.3s ease;
+  }
+  
+  body {
     margin: 0;
+    padding: 0;
+    background: var(--bg-gradient);
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
   }
   
   .container {
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-  
-  /* ===== Hero Section ===== */
-  .hero-betting {
-    background: linear-gradient(135deg, #111c30, #0a0a12);
+    margin: auto;
     padding: 4rem 1rem;
+  }
+  
+  .hero {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
     text-align: center;
-    border-bottom: 2px solid #ffcc00;
+    padding: 5rem 1rem;
   }
   
-  .hero-betting h1 {
+  .hero h1 {
     font-size: 2.8rem;
-    color: #ffcc00;
     margin-bottom: 1rem;
+    color: var(--primary);
   }
   
-  .hero-betting p {
+  .hero p {
     font-size: 1.2rem;
-    color: #ccc;
+    color: var(--text-soft);
     max-width: 800px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2rem auto;
   }
   
-  .btn-cta {
-    display: inline-block;
+  .btn-primary {
+    background: var(--primary);
+    color: #000;
+    font-weight: bold;
     padding: 0.75rem 1.5rem;
-    background-color: #ff6600;
-    color: #fff;
-    border-radius: 25px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s ease;
-  }
-  
-  .btn-cta:hover {
-    background-color: #e65100;
+    transition: var(--transition);
+    box-shadow: 0 0 10px var(--primary);
   }
 
-  /* ===== Responsive Layout for Betting Page ===== */
+
+  .btn-primary:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 15px #fff;
+  }
+  
+/* ===== Responsive Hero Section & Button ===== */
 @media (max-width: 768px) {
-    .hero-betting {
-      padding: 3rem 1rem;
-    }
-  
-    .hero-betting h1 {
-      font-size: 2rem;
-      line-height: 1.3;
-    }
-  
-    .hero-betting p {
-      font-size: 1rem;
-      max-width: 100%;
-      padding: 0 1rem;
-    }
-  
-    .btn-cta {
-      padding: 0.65rem 1.3rem;
-      font-size: 0.95rem;
-      border-radius: 20px;
-    }
-  
-    .container {
-      padding: 1.5rem 1rem;
-    }
+  .hero {
+    padding: 3rem 1rem;
   }
-  
-  @media (max-width: 480px) {
-    .hero-betting {
-      padding: 2rem 1rem;
-    }
-  
-    .hero-betting h1 {
-      font-size: 1.6rem;
-    }
-  
-    .hero-betting p {
-      font-size: 0.95rem;
-    }
-  
-    .btn-cta {
-      width: 100%;
-      text-align: center;
-      font-size: 1rem;
-      padding: 0.8rem;
-    }
-  }
-  
-  
-  /* ===== Featured Betting Sites ===== */
-  .featured-sites h2 {
+
+  .hero h1 {
     font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+
+  .container {
+    padding: 3rem 1rem;
+  }
+}
+
+
+  /* Featured Poker Sites Section */
+.poker-grid {
+    background: #0b0b0f;
+    color: #fff;
     text-align: center;
-    color: #ffcc00;
+    margin-top: 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #ffd700;
     margin-bottom: 2rem;
   }
   
-  .site-grid {
+  .site-card-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Force 5 columns */
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     justify-items: center;
   }
   
   
-  .site-card {
-    background: #1a1a2e;
-    padding: 1.5rem;
+  .poker-card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .poker-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+  }
+  
+  .poker-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
     border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  .site-card:hover {
-    transform: translateY(-5px);
-    border: 1px solid #ffcc00;
-  }
-  
-  .site-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
     margin-bottom: 1rem;
   }
   
-  .site-card h3 {
-    color: #ffd700;
-    font-size: 1.3rem;
+  .poker-card h3 {
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
-  }
-  
-  .site-card p {
-    color: #ccc;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-  }
-  
-  .btn-claim {
-    background-color: #ff6600;
     color: #fff;
+  }
+  
+  .poker-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 1.2rem;
+  }
+  
+  .btn-primary {
+    background: #ffd700;
+    color: #111;
+    font-weight: 600;
     padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-weight: bold;
+    border-radius: 25px;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: background 0.3s ease;
   }
   
-  .btn-claim:hover {
-    background-color: #e65100;
+  .btn-primary:hover {
+    background: #e6c200;
+  }
+  
+/* ===== Responsive Layout for Poker Grid Section ===== */
+@media (max-width: 1200px) {
+  .site-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .site-card-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
+  .poker-card {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
 
-  /* ===== Responsive Layout: Featured Betting Sites ===== */
-@media (max-width: 1024px) {
-    .site-grid {
-      grid-template-columns: repeat(3, 1fr); /* Tablet: 3 per row */
-    }
+@media (max-width: 600px) {
+  .site-card-grid {
+    grid-template-columns: 1fr;
   }
-  
-  @media (max-width: 768px) {
-    .site-grid {
-      grid-template-columns: repeat(2, 1fr); /* Small tablet / large phone: 2 per row */
-      gap: 1.2rem;
-    }
-  
-    .site-card {
-      padding: 1rem;
-    }
-  
-    .site-card h3 {
-      font-size: 1.1rem;
-    }
-  
-    .site-card p {
-      font-size: 0.9rem;
-    }
-  
-    .btn-claim {
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .site-grid {
-      grid-template-columns: 1fr; /* Mobile: stack cards */
-    }
-  
-    .site-card {
-      width: 100%;
-      padding: 1rem;
-    }
-  
-    .site-card img {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .site-card h3 {
-      font-size: 1rem;
-    }
-  
-    .site-card p {
-      font-size: 0.9rem;
-    }
-  
-    .btn-claim {
-      width: 100%;
-      font-size: 1rem;
-      padding: 0.6rem 1.2rem;
-    }
-  }
-  
 
-  
-  /* ===== Comparison Table ===== */
-  .comparison-section h2 {
-    text-align: center;
-    color: #ffcc00;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-  }
-  
-  .comparison-table {
+  .poker-card {
     width: 100%;
-    border-collapse: collapse;
-    background-color: #12121c;
-    border-radius: 10px;
-    overflow: hidden;
+    padding: 1.25rem;
   }
-  
-  .comparison-table th, .comparison-table td {
-    padding: 1rem;
-    text-align: center;
-    border-bottom: 1px solid #333;
-  }
-  
-  .comparison-table th {
-    background-color: #ff6600;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  
-  .comparison-table td {
-    color: #ccc;
-  }
-  
-  /* ===== FAQ Section ===== */
-  .faq-section {
-    margin: 4rem 0;
-  }
-  
-  .faq-section h2 {
-    text-align: center;
+
+  .section-title {
     font-size: 2rem;
-    color: #ffcc00;
-    margin-bottom: 2rem;
   }
-  
-  .faq-item {
-    background: #141414;
-    margin-bottom: 1rem;
-    padding: 1.2rem;
-    border-left: 4px solid #ff6600;
-    border-radius: 8px;
+
+  .poker-card h3 {
+    font-size: 1.2rem;
   }
-  
-  .faq-item h3 {
-    color: #ffd700;
-    margin-bottom: 0.5rem;
-  }
-  
-  .faq-item p {
-    color: #ccc;
+
+  .poker-card p {
     font-size: 0.95rem;
   }
-  
-  /* ===== CTA Banner ===== */
-  .cta-banner {
-    background: linear-gradient(90deg, #ff6600, #ffc107);
-    padding: 3rem 1rem;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-    color: #0a0a12;
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
-  
-  .cta-banner h2 {
+}
+
+  /* Bonuses & Tournaments Section */
+.bonuses-tournaments {
+  background: #16141f;
+  color: var(--text-soft);
+  text-align: center;
+  margin-top: 0;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 850px;
+  margin: 0 auto 2rem auto;
+}
+
+.bonus-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.bonus-list li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.bonus-list li i {
+  color: var(--primary);
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.trusted-operators {
+  background: #0c0b12;
+  color: var(--text-soft);
+  padding-bottom: 1rem;
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.trusted-operators .section-title {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.trusted-operators .section-subtitle {
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  color: #ccc;
+}
+
+.trust-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.trust-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.trust-list li i {
+  color: var(--primary);
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.trusted-operators {
+  background: #0c0b12;
+  color: var(--text-soft);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.trusted-operators .section-title {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.trusted-operators .section-subtitle {
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  color: #ccc;
+}
+
+.trust-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.trust-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.trust-list li i {
+  color: var(--primary);
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.faq {
+  background: #121010;
+  color: var(--text-soft);
+  padding: 4rem 2rem;
+  margin-top: 0;
+}
+
+.faq .section-title {
+  font-size: 2.4rem;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  background: #1c1b22;
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  background: #23212e;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.faq-item h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.faq-item h3 i {
+  margin-right: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0;
+}
+
+/* ===== Responsive: Bonuses, Trust, FAQ Sections ===== */
+@media (max-width: 768px) {
+  .section-title {
     font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  
-  .cta-banner p {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
   }
 
-  /* ===== Responsive: Comparison Table, FAQ, CTA Banner ===== */
-@media (max-width: 768px) {
-    .comparison-section h2,
-    .faq-section h2,
-    .cta-banner h2 {
-      font-size: 1.5rem;
-    }
-  
-    .comparison-table {
-      font-size: 0.85rem;
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
-      border-radius: 0;
-    }
-  
-    .comparison-table th,
-    .comparison-table td {
-      padding: 0.75rem;
-      text-align: left;
-      min-width: 100px;
-    }
-  
-    .faq-item {
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-  
-    .faq-item h3 {
-      font-size: 1rem;
-    }
-  
-    .faq-item p {
-      font-size: 0.9rem;
-    }
-  
-    .cta-banner {
-      padding: 2rem 1rem;
-      border-radius: 0;
-    }
-  
-    .cta-banner p {
-      font-size: 1rem;
-    }
+  .section-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
   }
-  
-  @media (max-width: 480px) {
-    .comparison-section h2,
-    .faq-section h2,
-    .cta-banner h2 {
-      font-size: 1.3rem;
-    }
-  
-    .comparison-table {
-      font-size: 0.8rem;
-    }
-  
-    .faq-item {
-      padding: 0.9rem;
-    }
-  
-    .faq-item h3 {
-      font-size: 0.95rem;
-    }
-  
-    .faq-item p {
-      font-size: 0.85rem;
-    }
-  
-    .cta-banner h2 {
-      font-size: 1.4rem;
-    }
-  
-    .cta-banner p {
-      font-size: 0.95rem;
-    }
+
+  .bonus-list,
+  .trust-list {
+    text-align: left;
+    padding-left: 0.5rem;
   }
-  
-  
-  /* ===== Footer Section ===== */
+
+  .bonus-list li,
+  .trust-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-wrap: wrap;
+  }
+
+  .bonus-list li i,
+  .trust-list li i {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+  }
+
+  .faq-item {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .bonus-list li,
+  .trust-list li,
+  .faq-item p {
+    font-size: 0.9rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+  }
+
+  .faq-item {
+   margin-top: 0;
+  }
+}
+
+
+
+/* ===== Footer Section ===== */
 .footer {
   background: #0a0a12;
   padding: 3rem 2rem 1rem;

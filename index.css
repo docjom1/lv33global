@@ -200,7 +200,7 @@ body {
 
   /* ===== Hero Section ===== */
 .hero {
-    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(0, 0, 20, 0.95) 100%), 
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.404) 0%, rgba(0, 0, 20, 0.95) 100%), 
                 url('https://i.ibb.co/VK09ZX4/Untitled-design-2.png') no-repeat center center;
     background-size: cover;
     min-height: 500px;
@@ -234,7 +234,7 @@ body {
   
   .hero-logo img {
     height: 200px;;
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.548));
   }
   
   .hero-content {
@@ -291,7 +291,47 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   }
-  
+
+ /* 🧲 Floating Social Container */
+.floating-social {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+/* 🎯 Individual Social Button */
+.social-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #222;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+.social-btn:hover {
+  transform: scale(1.15);
+}
+
+/* Optional themed backgrounds */
+.social-btn.telegram { background-color: #0088cc; }
+.social-btn.tiktok   { background-color: #000000; }
+.social-btn.youtube  { background-color: #FF0000; }
+.social-btn.twitter  { background-color: #1DA1F2; }
+
+
   /* Responsive Design */
   @media (max-width: 768px) {
     .hero {
@@ -332,6 +372,20 @@ body {
       font-size: 0.9rem;
     }
   }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+  
+  .floating-btn {
+    animation: bounce 2s infinite ease-in-out;
+  }
+  
 
 
 
