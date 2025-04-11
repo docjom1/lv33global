@@ -26,10 +26,11 @@ jobs:
           find . -type f -name "*.html" | grep -vE '404|error|offline' | while read file; do
             path=${file#./}
             dir=$(dirname "$path")
-            # ✅ Use proper ISO 8601 date format with timezone
-            lastmod=$(git log -1 --format="%cd" --date=format-local:"%Y-%m-%dT%H:%M:%S%:z" "$file" || date "+%Y-%m-%dT%H:%M:%S%:z")
+            
+            # ✅ Google ONLY wants YYYY-MM-DD, no time or timezone
+            lastmod=$(git log -1 --format="%cd" --date=format:"%Y-%m-%d" "$file" || date "+%Y-%m-%d")
 
-            # Convert index.html to directory URL (SEO-friendly)
+            # Convert index.html to SEO-friendly URLs
             if [[ "$path" == */index.html ]]; then
               url="${base_url}/${dir}/"
               priority=1.0
@@ -41,10 +42,10 @@ jobs:
               priority=0.8
             fi
 
-            # ✅ Add trailing slash
+            # Add trailing slash to all URLs
             url="${url%/}/"
 
-            # Lower priority for contact/about/etc.
+            # Lower priority for contact or about pages
             if [[ "$path" == *"contact"* || "$path" == *"about"* ]]; then
               priority=0.5
             fi
@@ -63,7 +64,7 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add sitemap.xml
-          git commit -m '✅ Fix sitemap lastmod to valid ISO 8601 format [skip ci]' || echo "No changes"
+          git commit -m '🛠️ Final sitemap fix - valid <lastmod> format [skip ci]' || echo "No changes"
           git push
 
       - name: Ping Bing Only (Google ping is deprecated)
