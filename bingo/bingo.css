@@ -210,7 +210,39 @@ body {
   border-radius: 0;
   color: white;
 }
+/* Section Headers */
+.section-header h2,
+.screen-title h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
 
+.section-header p,
+.screen-title p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #dcdcdc;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .section-header p,
+  .screen-title p {
+    font-size: 0.95rem;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .section-header h2,
+  .screen-title h2 {
+    text-align: center;
+  }
+}
 /* Ensure content is above the gradient */
 .page-header-img {
   position: relative;
@@ -472,12 +504,56 @@ body {
     color: #ffcc00;
 }
 
+/* ===== Mobile Responsive Styles for Activity Screen ===== */
+@media (max-width: 768px) {
+  .small-card,
+  .large-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .screen-items img,
+  .bingo-banner img,
+  .bonus-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .screen-items {
+    box-shadow: none;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .screen-overlay {
+    padding: 1rem;
+  }
+
+  .screen-overlay h5 {
+    font-size: 1.2rem;
+  }
+
+  .theme-text {
+    font-size: 1.5rem;
+  }
+
+  .screen-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
+
 /* Jackpot Center Card (with full image background) */
 .jackpot-card {
     flex: 2; /* Makes it bigger than the side cards */
     max-width: 490px;
     text-align: center;
-    background: url('Img/images-8.jpg') center/cover no-repeat; /* Background image */
     padding: 40px;
     border-radius: 15px;
     display: flex;
@@ -877,6 +953,73 @@ tbody tr:nth-child(even) {
   margin-top: 4px;
 }
 
+@media (max-width: 768px) {
+  .container-section {
+    padding: 0 15px;
+    margin: 20px auto;
+  }
+
+  .content-section {
+    margin-left: 0;
+    padding: 0 10px;
+  }
+
+  .content-section h1 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .content-section p {
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .comparison-section {
+    padding: 20px 10px;
+  }
+
+  .comparison-section h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .comparison-section p {
+    font-size: 13px;
+    text-align: justify;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -10px;
+  }
+
+  table {
+    min-width: 600px; /* Enable horizontal scroll on small screens */
+  }
+
+  th, td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .review-link {
+    font-size: 12px;
+  }
+}
+
+
 /* ===== Footer Section ===== */
 .footer {
   background: #0a0a12;
@@ -889,9 +1032,10 @@ tbody tr:nth-child(even) {
   margin: 0 auto;
 }
 
+/* === Footer Links === */
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -899,20 +1043,23 @@ tbody tr:nth-child(even) {
 .footer-column h3 {
   color: #d4af37;
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .footer-column ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-column li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
 
 .footer-column a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -921,23 +1068,25 @@ tbody tr:nth-child(even) {
   color: #d4af37;
 }
 
+/* === Newsletter Signup Form === */
 .newsletter-form input {
   width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 0.8rem;
-  border-radius: 4px;
+  padding: 0.75rem;
+  border-radius: 6px;
   border: none;
+  margin-bottom: 0.8rem;
   background: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
 }
 
 .newsletter-form button {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.75rem;
   background: #d4af37;
   color: #1a1a2e;
-  border: none;
-  border-radius: 4px;
   font-weight: 600;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -946,6 +1095,7 @@ tbody tr:nth-child(even) {
   background: #f1c40f;
 }
 
+/* === Trust Badges === */
 .trust-section {
   display: flex;
   flex-wrap: wrap;
@@ -962,10 +1112,11 @@ tbody tr:nth-child(even) {
 }
 
 .trust-section img:hover {
-  filter: grayscale(0) brightness(1);
+  filter: grayscale(0%) brightness(1);
   opacity: 1;
 }
 
+/* === Copyright & Bottom Section === */
 .copyright {
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
@@ -974,45 +1125,68 @@ tbody tr:nth-child(even) {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-bottom h3 {
+  color: var(--primary-color, #d4af37);
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-bottom p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-bottom a {
+  color: var(--primary-color, #d4af37);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+  color: #ffc107;
+}
+
 /* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
   .news-wrapper {
     grid-template-columns: 1fr;
   }
-  
   .news-list {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .news-list {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .featured-news-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  
+  .news-list,
+  .featured-news-grid,
   .footer-links {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .news-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .featured-news-grid {
-    grid-template-columns: 1fr;
-  }
-  
+  .news-list,
+  .featured-news-grid,
   .footer-links {
     grid-template-columns: 1fr;
   }
-  
+
   .trust-section img {
     height: 30px;
   }
 }
+
