@@ -26,12 +26,12 @@ jobs:
           find . -type f -name "*.html" | grep -vE '404|error|offline' | while read file; do
             path=${file#./}
             dir=$(dirname "$path")
-            
-            # ✅ Google-compliant YYYY-MM-DD (no time or timezone)
+
+            # Proper lastmod date format
             lastmod=$(git log -1 --format="%cd" --date=format:"%Y-%m-%d" "$file")
             if [[ -z "$lastmod" ]]; then lastmod=$(date "+%Y-%m-%d"); fi
 
-            # Convert index.html to SEO-friendly URLs
+            # Format SEO-friendly URLs
             if [[ "$path" == */index.html ]]; then
               url="${base_url}/${dir}/"
               priority=1.0
@@ -43,10 +43,8 @@ jobs:
               priority=0.8
             fi
 
-            # ✅ Ensure trailing slash
             url="${url%/}/"
 
-            # Lower priority for generic pages
             if [[ "$path" == *"contact"* || "$path" == *"about"* ]]; then
               priority=0.5
             fi
@@ -60,14 +58,17 @@ jobs:
 
           echo '</urlset>' >> sitemap.xml
 
+          # 🔥 FINAL CLEANUP: remove unexpected script garbage
+          sed -i '/<script/d' sitemap.xml
+
       - name: Commit and Push Sitemap
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add sitemap.xml
-          git commit -m '✅ Clean final sitemap with ISO date + trailing slashes [skip ci]' || echo "No changes"
+          git commit -m '✅ FINAL sitemap cleaned and ready for indexing [skip ci]' || echo "No changes"
           git push
 
-      - name: Ping Bing Only (Google deprecated ping)
+      - name: Ping Bing Only (Google ping deprecated)
         run: |
           curl https://www.bing.com/ping?sitemap=https://www.lv33global.com/sitemap.xml
