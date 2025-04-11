@@ -26,34 +26,35 @@ jobs:
           find . -type f -name "*.html" | grep -vE '404|error|offline' | while read file; do
             path=${file#./}
             dir=$(dirname "$path")
-            lastmod=$(git log -1 --format="%ad" --date=iso "$file" || date -I)
+            # ✅ Fix: Use proper date format YYYY-MM-DD
+            lastmod=$(git log -1 --format="%ad" --date=format:%Y-%m-%d "$file" || date "+%Y-%m-%d")
 
-          # Convert index.html to directory URL (SEO-friendly)
-if [[ "$path" == */index.html ]]; then
-  url="${base_url}/${dir}/"
-  priority=1.0
-elif [[ "$path" == "index.html" ]]; then
-  url="${base_url}/"
-  priority=1.0
-else
-  url="${base_url}/${path}"
-  priority=0.8
-fi
+            # Convert index.html to directory URL (SEO-friendly)
+            if [[ "$path" == */index.html ]]; then
+              url="${base_url}/${dir}/"
+              priority=1.0
+            elif [[ "$path" == "index.html" ]]; then
+              url="${base_url}/"
+              priority=1.0
+            else
+              url="${base_url}/${path}"
+              priority=0.8
+            fi
 
-# ✅ Add trailing slash
-url="${url%/}/"
+            # ✅ Ensure trailing slash
+            url="${url%/}/"
 
-# Lower priority for contact/about/etc.
-if [[ "$path" == *"contact"* || "$path" == *"about"* ]]; then
-  priority=0.5
-fi
+            # Lower priority for contact/about/etc.
+            if [[ "$path" == *"contact"* || "$path" == *"about"* ]]; then
+              priority=0.5
+            fi
 
-echo "  <url>" >> sitemap.xml
-echo "    <loc>${url}</loc>" >> sitemap.xml
-echo "    <lastmod>${lastmod}</lastmod>" >> sitemap.xml
-echo "    <priority>${priority}</priority>" >> sitemap.xml
-echo "  </url>" >> sitemap.xml
- done
+            echo "  <url>" >> sitemap.xml
+            echo "    <loc>${url}</loc>" >> sitemap.xml
+            echo "    <lastmod>${lastmod}</lastmod>" >> sitemap.xml
+            echo "    <priority>${priority}</priority>" >> sitemap.xml
+            echo "  </url>" >> sitemap.xml
+          done
 
           echo '</urlset>' >> sitemap.xml
 
@@ -62,10 +63,9 @@ echo "  </url>" >> sitemap.xml
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add sitemap.xml
-          git commit -m '🤖 Auto-update sitemap.xml with lastmod & dynamic priority [skip ci]' || echo "No changes"
+          git commit -m '🤖 Fix sitemap date format to YYYY-MM-DD [skip ci]' || echo "No changes"
           git push
 
-      - name: Ping Google and Bing
+      - name: Ping Bing Only (Google deprecated)
         run: |
-          curl https://www.google.com/ping?sitemap=https://www.lv33global.com/sitemap.xml
           curl https://www.bing.com/ping?sitemap=https://www.lv33global.com/sitemap.xml
