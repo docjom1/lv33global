@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Generate Sitemap with Metadata
+      - name: Generate Sitemap with Valid Lastmod Format
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
@@ -27,8 +27,9 @@ jobs:
             path=${file#./}
             dir=$(dirname "$path")
             
-            # ✅ Google ONLY wants YYYY-MM-DD, no time or timezone
-            lastmod=$(git log -1 --format="%cd" --date=format:"%Y-%m-%d" "$file" || date "+%Y-%m-%d")
+            # ✅ Google-compliant YYYY-MM-DD (no time or timezone)
+            lastmod=$(git log -1 --format="%cd" --date=format:"%Y-%m-%d" "$file")
+            if [[ -z "$lastmod" ]]; then lastmod=$(date "+%Y-%m-%d"); fi
 
             # Convert index.html to SEO-friendly URLs
             if [[ "$path" == */index.html ]]; then
@@ -42,10 +43,10 @@ jobs:
               priority=0.8
             fi
 
-            # Add trailing slash to all URLs
+            # ✅ Ensure trailing slash
             url="${url%/}/"
 
-            # Lower priority for contact or about pages
+            # Lower priority for generic pages
             if [[ "$path" == *"contact"* || "$path" == *"about"* ]]; then
               priority=0.5
             fi
@@ -64,9 +65,9 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add sitemap.xml
-          git commit -m '🛠️ Final sitemap fix - valid <lastmod> format [skip ci]' || echo "No changes"
+          git commit -m '✅ Clean final sitemap with ISO date + trailing slashes [skip ci]' || echo "No changes"
           git push
 
-      - name: Ping Bing Only (Google ping is deprecated)
+      - name: Ping Bing Only (Google deprecated ping)
         run: |
           curl https://www.bing.com/ping?sitemap=https://www.lv33global.com/sitemap.xml
