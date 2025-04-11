@@ -28,29 +28,32 @@ jobs:
             dir=$(dirname "$path")
             lastmod=$(git log -1 --format="%ad" --date=iso "$file" || date -I)
 
-            # Convert index.html to directory URL (SEO-friendly)
-            if [[ "$path" == */index.html ]]; then
-              url="${base_url}/${dir}/"
-              priority=1.0
-            elif [[ "$path" == "index.html" ]]; then
-              url="${base_url}/"
-              priority=1.0
-            else
-              url="${base_url}/${path}"
-              priority=0.8
-            fi
+          # Convert index.html to directory URL (SEO-friendly)
+if [[ "$path" == */index.html ]]; then
+  url="${base_url}/${dir}/"
+  priority=1.0
+elif [[ "$path" == "index.html" ]]; then
+  url="${base_url}/"
+  priority=1.0
+else
+  url="${base_url}/${path}"
+  priority=0.8
+fi
 
-            # Lower priority for contact/about/etc.
-            if [[ "$path" == *"contact"* || "$path" == *"about"* ]]; then
-              priority=0.5
-            fi
+# ✅ Add trailing slash
+url="${url%/}/"
 
-            echo "  <url>" >> sitemap.xml
-            echo "    <loc>${url}</loc>" >> sitemap.xml
-            echo "    <lastmod>${lastmod}</lastmod>" >> sitemap.xml
-            echo "    <priority>${priority}</priority>" >> sitemap.xml
-            echo "  </url>" >> sitemap.xml
-          done
+# Lower priority for contact/about/etc.
+if [[ "$path" == *"contact"* || "$path" == *"about"* ]]; then
+  priority=0.5
+fi
+
+echo "  <url>" >> sitemap.xml
+echo "    <loc>${url}</loc>" >> sitemap.xml
+echo "    <lastmod>${lastmod}</lastmod>" >> sitemap.xml
+echo "    <priority>${priority}</priority>" >> sitemap.xml
+echo "  </url>" >> sitemap.xml
+ done
 
           echo '</urlset>' >> sitemap.xml
 
