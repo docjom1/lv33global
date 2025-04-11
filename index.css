@@ -571,6 +571,35 @@ body {
     flex-shrink: 0; /* Prevent shrinking */
     text-align: center;
   }
+
+  .category-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on mobile */
+  }
+
+  @media (max-width: 768px) {
+    .category-grid {
+      overflow-x: auto;
+      padding: 1rem 1rem 2rem;
+      gap: 1rem;
+      justify-content: flex-start; /* Align left for swipe flow */
+      scroll-snap-type: x mandatory; /* Smooth scrolling effect */
+    }
+  
+    .category-card {
+      min-width: 160px;
+      font-size: 1rem;
+      scroll-snap-align: start;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .category-card {
+      min-width: 140px;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
+    }
+  }
+  
   
   /* ===== Casino Reviews Section ===== */
   .casino-reviews {

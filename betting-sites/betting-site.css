@@ -1,0 +1,590 @@
+/* ===== Base Styles ===== */
+:root {
+    --primary-color: #d4af37; /* Gold - classic casino color */
+    --secondary-color: #1a1a2e; /* Dark navy */
+    --accent-color: #ff3300; /* Rich red */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-dark: #0d0d1a;
+    --bg-light: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+/* ===== Navigation Bar ===== */
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.logo img {
+    height: 60px;
+    transition: var(--transition);
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+/* ===== Search Bar ===== */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5rem;
+    flex-grow: 1;
+    max-width: 500px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    outline: none;
+}
+.search-btn {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.search-btn:hover {
+    background-color: #fc5000;
+}
+/* ===== Navigation Links ===== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Sign Up Button */
+  .sign-up {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    margin-left: 0.5rem;
+  }
+  
+  .sign-up:hover {
+    background-color: #fc5000 ;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ===== Mobile Menu ===== */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 1024px) {
+    .navbar-container {
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+    }
+    
+    .search-bar {
+      order: 3;
+      width: 100%;
+      margin: 0.8rem 0;
+      max-width: 100%;
+    }
+    
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
+    
+    .nav-links a {
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .sign-up {
+      margin: 1rem auto;
+      display: block;
+      width: 30%;
+    }
+    
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo img {
+      height: 50px;
+    }
+    
+    .navbar-container {
+      padding: 0.5rem;
+    }
+  }
+
+  /* ===== Betting Page Styles ===== */
+body {
+    background-color: #0a0a12;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* ===== Hero Section ===== */
+  .hero-betting {
+    background: linear-gradient(135deg, #111c30, #0a0a12);
+    padding: 4rem 1rem;
+    text-align: center;
+    border-bottom: 2px solid #ffcc00;
+  }
+  
+  .hero-betting h1 {
+    font-size: 2.8rem;
+    color: #ffcc00;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-betting p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+  
+  .btn-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff6600;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-cta:hover {
+    background-color: #e65100;
+  }
+
+  /* ===== Responsive Layout for Betting Page ===== */
+@media (max-width: 768px) {
+    .hero-betting {
+      padding: 3rem 1rem;
+    }
+  
+    .hero-betting h1 {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+  
+    .hero-betting p {
+      font-size: 1rem;
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  
+    .btn-cta {
+      padding: 0.65rem 1.3rem;
+      font-size: 0.95rem;
+      border-radius: 20px;
+    }
+  
+    .container {
+      padding: 1.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-betting {
+      padding: 2rem 1rem;
+    }
+  
+    .hero-betting h1 {
+      font-size: 1.6rem;
+    }
+  
+    .hero-betting p {
+      font-size: 0.95rem;
+    }
+  
+    .btn-cta {
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+  }
+  
+  
+  /* ===== Featured Betting Sites ===== */
+  .featured-sites h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #ffcc00;
+    margin-bottom: 2rem;
+  }
+  
+  .site-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Force 5 columns */
+    gap: 1rem;
+    justify-items: center;
+  }
+  
+  
+  .site-card {
+    background: #1a1a2e;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .site-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid #ffcc00;
+  }
+  
+  .site-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .site-card h3 {
+    color: #ffd700;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .site-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-claim {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+  
+  .btn-claim:hover {
+    background-color: #e65100;
+  }
+
+
+  /* ===== Responsive Layout: Featured Betting Sites ===== */
+@media (max-width: 1024px) {
+    .site-grid {
+      grid-template-columns: repeat(3, 1fr); /* Tablet: 3 per row */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .site-grid {
+      grid-template-columns: repeat(2, 1fr); /* Small tablet / large phone: 2 per row */
+      gap: 1.2rem;
+    }
+  
+    .site-card {
+      padding: 1rem;
+    }
+  
+    .site-card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .site-card p {
+      font-size: 0.9rem;
+    }
+  
+    .btn-claim {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .site-grid {
+      grid-template-columns: 1fr; /* Mobile: stack cards */
+    }
+  
+    .site-card {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .site-card img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .site-card h3 {
+      font-size: 1rem;
+    }
+  
+    .site-card p {
+      font-size: 0.9rem;
+    }
+  
+    .btn-claim {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  
+
+  
+  /* ===== Comparison Table ===== */
+  .comparison-section h2 {
+    text-align: center;
+    color: #ffcc00;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #12121c;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .comparison-table th, .comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+  
+  .comparison-table th {
+    background-color: #ff6600;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .comparison-table td {
+    color: #ccc;
+  }
+  
+  /* ===== FAQ Section ===== */
+  .faq-section {
+    margin: 4rem 0;
+  }
+  
+  .faq-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffcc00;
+    margin-bottom: 2rem;
+  }
+  
+  .faq-item {
+    background: #141414;
+    margin-bottom: 1rem;
+    padding: 1.2rem;
+    border-left: 4px solid #ff6600;
+    border-radius: 8px;
+  }
+  
+  .faq-item h3 {
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .faq-item p {
+    color: #ccc;
+    font-size: 0.95rem;
+  }
+  
+  /* ===== CTA Banner ===== */
+  .cta-banner {
+    background: linear-gradient(90deg, #ff6600, #ffc107);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    color: #0a0a12;
+  }
+  
+  .cta-banner h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-banner p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== Responsive: Comparison Table, FAQ, CTA Banner ===== */
+@media (max-width: 768px) {
+    .comparison-section h2,
+    .faq-section h2,
+    .cta-banner h2 {
+      font-size: 1.5rem;
+    }
+  
+    .comparison-table {
+      font-size: 0.85rem;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-radius: 0;
+    }
+  
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.75rem;
+      text-align: left;
+      min-width: 100px;
+    }
+  
+    .faq-item {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .faq-item h3 {
+      font-size: 1rem;
+    }
+  
+    .faq-item p {
+      font-size: 0.9rem;
+    }
+  
+    .cta-banner {
+      padding: 2rem 1rem;
+      border-radius: 0;
+    }
+  
+    .cta-banner p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .comparison-section h2,
+    .faq-section h2,
+    .cta-banner h2 {
+      font-size: 1.3rem;
+    }
+  
+    .comparison-table {
+      font-size: 0.8rem;
+    }
+  
+    .faq-item {
+      padding: 0.9rem;
+    }
+  
+    .faq-item h3 {
+      font-size: 0.95rem;
+    }
+  
+    .faq-item p {
+      font-size: 0.85rem;
+    }
+  
+    .cta-banner h2 {
+      font-size: 1.4rem;
+    }
+  
+    .cta-banner p {
+      font-size: 0.95rem;
+    }
+  }
+  
+  
