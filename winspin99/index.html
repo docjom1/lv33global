@@ -478,7 +478,7 @@
   const reviewList = document.getElementById('reviewList');
 
   // 🔁 Load from localStorage on page load
-  const savedReviews = JSON.parse(localStorage.getItem('png28Reviews')) || [];
+  const savedReviews = JSON.parse(localStorage.getItem('Winspin99Reviews')) || [];
   savedReviews.forEach(addReviewToDOM);
 
   // ✏️ Toggle review form
@@ -508,7 +508,7 @@
     };
 
     savedReviews.unshift(newReview);
-    localStorage.setItem('png28Reviews', JSON.stringify(savedReviews));
+    localStorage.setItem('Winspin99Reviews', JSON.stringify(savedReviews));
 
     addReviewToDOM(newReview);
 
@@ -524,7 +524,7 @@
         <div class="user-info">
           <div class="avatar">${data.avatar}</div>
           <div>
-            <strong>${data.name}</strong> <span class="badge">Verified 🇵🇬 Player</span>
+            <strong>${data.name}</strong> <span class="badge">Verified AU Player</span>
             <p class="time">🕒 ${data.date}</p>
           </div>
         </div>
