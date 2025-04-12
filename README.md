@@ -1,5 +1,12 @@
 # 🎰 LV33 Global – SEO Casino Content Site
 
+![HTML](https://img.shields.io/badge/HTML-100%25-orange?logo=html5&style=flat)
+![CSS](https://img.shields.io/badge/CSS-100%25-purple?logo=css3&style=flat)
+![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub--Pages-blue?logo=github)
+![SEO Optimized](https://img.shields.io/badge/SEO-High%20Score-brightgreen?style=flat)
+![Project Status](https://img.shields.io/badge/Status-Active-green)
+
+
 **LV33 Global** is a fully static, SEO-optimized HTML website for casino reviews, bonus guides, news articles, and betting site comparisons across Asia and beyond. It’s built for performance, visibility, and modular scalability. All hand-coded, zero bloat. Hosted with GitHub Pages. Automated with GitHub Actions. Designed to win Google.
 
 🔗 Live: [https://www.lv33global.com](https://www.lv33global.com)
