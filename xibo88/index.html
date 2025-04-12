@@ -396,15 +396,15 @@
     <button class="write-review-btn">✍️ Write a Review</button>
   </div>
 
-  <!-- Write Review Form -->
-  <div class="review-form-container" id="reviewFormContainer" style="display: none;">
-    <h3>Write Your Review</h3>
-    <form id="reviewForm">
-      <input type="text" id="username" placeholder="Your name or nickname" required />
-      <textarea id="userReview" placeholder="Tell us about your experience on Xibo88..." required></textarea>
-      <button type="submit">Submit Review</button>
-    </form>
-  </div>
+  <!-- WRITE REVIEW FORM -->
+<div class="write-review-form" id="reviewFormContainer" style="display: none;">
+  <h3>Write Your Review</h3>
+  <form id="reviewForm">
+    <input type="text" id="username" placeholder="Your name or nickname" required />
+    <textarea id="userReview" placeholder="Tell us about your PNG28 experience..." required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+</div>
 
   <!-- Reviews List -->
   <div id="reviewList">
@@ -429,56 +429,73 @@
 
 <!-- ✅ JS Logic -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const writeBtn = document.querySelector('.write-review-btn');
-    const formContainer = document.getElementById('reviewFormContainer');
-    const form = document.getElementById('reviewForm');
-    const usernameInput = document.getElementById('username');
-    const userReviewInput = document.getElementById('userReview');
-    const reviewList = document.getElementById('reviewList');
+ document.addEventListener('DOMContentLoaded', function () {
+  const writeBtn = document.querySelector('.write-review-btn');
+  const formContainer = document.getElementById('reviewFormContainer');
+  const form = document.getElementById('reviewForm');
+  const usernameInput = document.getElementById('username');
+  const userReviewInput = document.getElementById('userReview');
+  const reviewList = document.getElementById('reviewList');
 
-    // Toggle form
-    writeBtn.addEventListener('click', () => {
-      const visible = formContainer.style.display === 'block';
-      formContainer.style.display = visible ? 'none' : 'block';
-      writeBtn.textContent = visible ? '✍️ Write a Review' : '❌ Cancel';
-    });
+  // 🔁 Load from localStorage on page load
+  const savedReviews = JSON.parse(localStorage.getItem('png28Reviews')) || [];
+  savedReviews.forEach(addReviewToDOM);
 
-    // Handle form submission
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  // ✏️ Toggle review form
+  writeBtn.addEventListener('click', () => {
+    const isVisible = formContainer.style.display === 'block';
+    formContainer.style.display = isVisible ? 'none' : 'block';
+    writeBtn.textContent = isVisible ? '✍️ Write a Review' : '❌ Cancel';
+  });
 
-      const name = usernameInput.value.trim();
-      const review = userReviewInput.value.trim();
+  // 💾 Handle form submission
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      if (!name || !review) {
-        alert('Please complete both fields.');
-        return;
-      }
+    const name = usernameInput.value.trim();
+    const reviewText = userReviewInput.value.trim();
 
-      const avatar = name.charAt(0).toUpperCase();
-      const newReview = document.createElement('div');
-      newReview.classList.add('user-review');
-      newReview.innerHTML = `
+    if (!name || !reviewText) {
+      alert('Please complete all fields.');
+      return;
+    }
+
+    const newReview = {
+      name,
+      review: reviewText,
+      avatar: name.charAt(0).toUpperCase(),
+      date: new Date().toLocaleDateString()
+    };
+
+    savedReviews.unshift(newReview);
+    localStorage.setItem('png28Reviews', JSON.stringify(savedReviews));
+
+    addReviewToDOM(newReview);
+
+    form.reset();
+    formContainer.style.display = 'none';
+    writeBtn.textContent = '✍️ Write a Review';
+  });
+
+  // 🧱 DOM render
+  function addReviewToDOM(data) {
+    const html = `
+      <div class="user-review">
         <div class="user-info">
-          <div class="avatar">${avatar}</div>
+          <div class="avatar">${data.avatar}</div>
           <div>
-            <strong>${name}</strong> <span class="badge">New 🇦🇺</span>
-            <p class="time">🕒 Just now</p>
+            <strong>${data.name}</strong> <span class="badge">Verified 🇵🇬 Player</span>
+            <p class="time">🕒 ${data.date}</p>
           </div>
         </div>
-        <div class="review-text">
-          <p>${review}</p>
-        </div>
+        <div class="review-text"><p>${data.review}</p></div>
         <div class="vote-bar">👍 0</div>
-      `;
+      </div>
+    `;
+    reviewList.insertAdjacentHTML('afterbegin', html);
+  }
+});
 
-      reviewList.prepend(newReview);
-      form.reset();
-      formContainer.style.display = 'none';
-      writeBtn.textContent = '✍️ Write a Review';
-    });
-  });
 </script>
 
 
@@ -675,8 +692,8 @@
     
 <!-- TAB 6 -->
 <section id="payments" class="tab-section">
-  <h1>Xibo88 Payment Methods (Australia)</h1>
-  <p>Explore fast and secure deposit & withdrawal options accepted at Xibo88 Australia. All methods listed are trusted and widely used by Aussie players.</p>
+  <h1>WinSpin99 Australia Payment Methods</h1>
+  <p>Explore fast and secure deposit & withdrawal options available at WinSpin99. All methods below are trusted by Aussie players and optimized for speed, safety, and convenience.</p>
 
   <div class="payment-grid">
     <!-- Local AU-Friendly Options -->

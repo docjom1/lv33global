@@ -117,21 +117,15 @@
       
           <h4>Payment Methods</h4>
           <div class="payment-icons">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/2.svg" alt="bitcoin">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/3.svg" alt="TCl99 Thailand Casino payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/4.svg" alt="TCl99 Thailand Casino  payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/agd_bank01.png" alt="TCl99 Thailand Casino  payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/Aya_banking01.png" alt="TCl99 Thailand Casino  payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/Aya_pay01.png" alt="TCl99 Thailand Casino  payment method Bank">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/cb_bank01.png" alt="TCl99 Thailand Casino  payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/cb_pay01.png" alt="TCl99 Thailand Casino  payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/kbz_bank01.png" alt="TCl99 Thailand Casino  payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/kpay01.png" alt="TCl99 Thailand Casino  payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/thai_bank01.png" alt="TCl99 Thailand Casino  payment method">
-            <img src="https://www.xibo88.org/assets/images/footer/payment/uab_bank01.png" alt="TCl99 Thailand Casino payment method">  
-            <img src="https://www.xibo88.org/assets/images/footer/payment/wavemoney01.png" alt="TCl99 Thailand Casino payment method">  
-            <img src="https://www.xibo88.org/assets/images/footer/payment/yoma_bank01.png" alt="TCl99 Thailand Casino payment method">    
-        </div>
+            <img src="https://i.ibb.co/S4QjGyzS/unnamed.png" alt="Bkash payment method for TCL99 Thailand online casino">
+            <img src="https://i.ibb.co/pBCNJ5Gj/images.jpg" alt="Rocket mobile banking payment for TCL99 deposits">
+            <img src="https://i.ibb.co/LDyPv5bJ/download.jpg" alt="Nagad wallet payment method supported by TCL99">
+            <img src="https://i.ibb.co/vnqk0vj/download-1.jpg" alt="Islamic Bank transfer option for TCL99 players">
+            <img src="https://i.ibb.co/qLg83CFr/download-2.png" alt="Dutch Bangla Bank payment support for TCL99 Bangladesh">
+            <img src="https://i.ibb.co/4R86NMgc/download-2.jpg" alt="City Bank online payment gateway for TCL99 transactions">
+            <img src="https://i.ibb.co/r8p8YST/download-1.png" alt="IFIC Bank payment method available at TCL99 online casino">
+          </div>
+          
       
           <p><strong>Established:</strong> 2024<br><strong>License:</strong> Curacao</p>
         </aside>
@@ -220,9 +214,9 @@
     <div class="section-box">
       <h2>📸 Casino Screenshots</h2>
       <div class="screenshots">
-        <img src="img/tcl99th1.jpg" alt="tcl99 thailand casino Screenshot 1">
-        <img src="img/tcl99th2.jpg" alt="tcl99 thailand casino Screenshot 2">
-        <img src="img/tcl99th3.jpg" alt="tcl99 thailand casino Screenshot 3">
+        <img src="img/tcl99th1.png" alt="tcl99 thailand casino Screenshot 1">
+        <img src="img/tcl99th2.png" alt="tcl99 thailand casino Screenshot 2">
+        <img src="img/tcl99th3.png" alt="tcl99 thailand casino Screenshot 3">
       
       </div>
     </div>
@@ -416,15 +410,15 @@
       <button class="write-review-btn">✍️ Write a Review</button>
     </div>
   
-    <!-- Write Review Form -->
-    <div class="review-form-container" id="reviewFormContainer" style="display: none;">
-      <h3>Write Your Review</h3>
-      <form id="reviewForm">
-        <input type="text" id="username" placeholder="Your name or nickname" required />
-        <textarea id="userReview" placeholder="Tell us about your experience on TCL99..." required></textarea>
-        <button type="submit">Submit Review</button>
-      </form>
-    </div>
+    <!-- WRITE REVIEW FORM -->
+<div class="write-review-form" id="reviewFormContainer" style="display: none;">
+  <h3>Write Your Review</h3>
+  <form id="reviewForm">
+    <input type="text" id="username" placeholder="Your name or nickname" required />
+    <textarea id="userReview" placeholder="Tell us about your PNG28 experience..." required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+</div>
   
     <!-- Reviews List -->
     <div id="reviewList">
@@ -450,55 +444,72 @@
 <!-- ✅ JS Logic -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const writeBtn = document.querySelector('.write-review-btn');
-    const formContainer = document.getElementById('reviewFormContainer');
-    const form = document.getElementById('reviewForm');
-    const usernameInput = document.getElementById('username');
-    const userReviewInput = document.getElementById('userReview');
-    const reviewList = document.getElementById('reviewList');
+  const writeBtn = document.querySelector('.write-review-btn');
+  const formContainer = document.getElementById('reviewFormContainer');
+  const form = document.getElementById('reviewForm');
+  const usernameInput = document.getElementById('username');
+  const userReviewInput = document.getElementById('userReview');
+  const reviewList = document.getElementById('reviewList');
 
-    // Toggle form
-    writeBtn.addEventListener('click', () => {
-      const visible = formContainer.style.display === 'block';
-      formContainer.style.display = visible ? 'none' : 'block';
-      writeBtn.textContent = visible ? '✍️ Write a Review' : '❌ Cancel';
-    });
+  // 🔁 Load from localStorage on page load
+  const savedReviews = JSON.parse(localStorage.getItem('png28Reviews')) || [];
+  savedReviews.forEach(addReviewToDOM);
 
-    // Handle form submission
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  // ✏️ Toggle review form
+  writeBtn.addEventListener('click', () => {
+    const isVisible = formContainer.style.display === 'block';
+    formContainer.style.display = isVisible ? 'none' : 'block';
+    writeBtn.textContent = isVisible ? '✍️ Write a Review' : '❌ Cancel';
+  });
 
-      const name = usernameInput.value.trim();
-      const review = userReviewInput.value.trim();
+  // 💾 Handle form submission
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      if (!name || !review) {
-        alert('Please complete both fields.');
-        return;
-      }
+    const name = usernameInput.value.trim();
+    const reviewText = userReviewInput.value.trim();
 
-      const avatar = name.charAt(0).toUpperCase();
-      const newReview = document.createElement('div');
-      newReview.classList.add('user-review');
-      newReview.innerHTML = `
+    if (!name || !reviewText) {
+      alert('Please complete all fields.');
+      return;
+    }
+
+    const newReview = {
+      name,
+      review: reviewText,
+      avatar: name.charAt(0).toUpperCase(),
+      date: new Date().toLocaleDateString()
+    };
+
+    savedReviews.unshift(newReview);
+    localStorage.setItem('png28Reviews', JSON.stringify(savedReviews));
+
+    addReviewToDOM(newReview);
+
+    form.reset();
+    formContainer.style.display = 'none';
+    writeBtn.textContent = '✍️ Write a Review';
+  });
+
+  // 🧱 DOM render
+  function addReviewToDOM(data) {
+    const html = `
+      <div class="user-review">
         <div class="user-info">
-          <div class="avatar">${avatar}</div>
+          <div class="avatar">${data.avatar}</div>
           <div>
-            <strong>${name}</strong> <span class="badge">New 🇦🇺</span>
-            <p class="time">🕒 Just now</p>
+            <strong>${data.name}</strong> <span class="badge">Verified 🇵🇬 Player</span>
+            <p class="time">🕒 ${data.date}</p>
           </div>
         </div>
-        <div class="review-text">
-          <p>${review}</p>
-        </div>
+        <div class="review-text"><p>${data.review}</p></div>
         <div class="vote-bar">👍 0</div>
-      `;
+      </div>
+    `;
+    reviewList.insertAdjacentHTML('afterbegin', html);
+  }
+});
 
-      reviewList.prepend(newReview);
-      form.reset();
-      formContainer.style.display = 'none';
-      writeBtn.textContent = '✍️ Write a Review';
-    });
-  });
 </script>
 
 
@@ -653,7 +664,6 @@
     </div>
   </section>
   
-  <!-- ✅ JS Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('discussionForm');
@@ -674,7 +684,7 @@
           <div class="avatar">${avatar}</div>
           <div class="post-content">
             <div class="user-meta">
-              <strong>${name}</strong> <span class="badge">New 🇹🇭</span>
+              <strong>${name}</strong> <span class="badge">New 🇦🇺</span>
               <span class="time">🕒 just now</span>
             </div>
             <p>${msg}</p>
