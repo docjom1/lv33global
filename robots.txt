@@ -1,5 +1,6 @@
 User-agent: *
-Disallow: /404.html
+Disallow: /404/
+Disallow: /offline/
 Allow: /
 
 Sitemap: https://www.lv33global.com/sitemap.xml
