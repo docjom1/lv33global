@@ -406,7 +406,7 @@
   <h3>Write Your Review</h3>
   <form id="reviewForm">
     <input type="text" id="username" placeholder="Your name or nickname" required />
-    <textarea id="userReview" placeholder="Tell us about your PNG28 experience..." required></textarea>
+    <textarea id="userReview" placeholder="Tell us about your majubaji experience..." required></textarea>
     <button type="submit">Submit Review</button>
   </form>
 </div>
@@ -443,7 +443,7 @@
   const reviewList = document.getElementById('reviewList');
 
   // 🔁 Load from localStorage on page load
-  const savedReviews = JSON.parse(localStorage.getItem('png28Reviews')) || [];
+  const savedReviews = JSON.parse(localStorage.getItem('majubajiReviews')) || [];
   savedReviews.forEach(addReviewToDOM);
 
   // ✏️ Toggle review form
@@ -473,7 +473,7 @@
     };
 
     savedReviews.unshift(newReview);
-    localStorage.setItem('png28Reviews', JSON.stringify(savedReviews));
+    localStorage.setItem('majubajieviews', JSON.stringify(savedReviews));
 
     addReviewToDOM(newReview);
 
@@ -489,7 +489,7 @@
         <div class="user-info">
           <div class="avatar">${data.avatar}</div>
           <div>
-            <strong>${data.name}</strong> <span class="badge">Verified 🇵🇬 Player</span>
+            <strong>${data.name}</strong> <span class="badge">Verified BD Player</span>
             <p class="time">🕒 ${data.date}</p>
           </div>
         </div>
