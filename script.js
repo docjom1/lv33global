@@ -48,3 +48,5 @@ function showSection(sectionId) {
     });
     document.querySelector(`.tabs-nav button[onclick*="${sectionId}"]`).classList.add('active');
   }
+
+  
