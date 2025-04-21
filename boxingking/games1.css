@@ -395,124 +395,6 @@ body {
     margin: 0 6px;
 }
 
-@media (max-width: 768px) {
-    .main-content {
-      padding: 40px 15px;
-    }
-  
-    .section-title {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-  
-    .review-section p {
-      font-size: 15px;
-    }
-  
-    .game-info-wrapper {
-      flex-direction: column;
-      gap: 20px;
-      padding: 10px 0;
-    }
-  
-    .game-info-left,
-    .game-info-right {
-      min-width: 100%;
-      margin-top: 20px;
-    }
-  
-    .game-info-right h2 {
-      font-size: 22px;
-      margin-top: 40px;
-    }
-  
-    .games-symbols img {
-      width: 60px;
-      height: 80px;
-      margin-top: 30px;
-    }
-  
-    .info-boxes {
-      flex-direction: column;
-      gap: 15px;
-    }
-  
-    .info-box {
-      width: 100%;
-      padding: 15px;
-    }
-  
-    .info-box h4 {
-      font-size: 13px;
-    }
-  
-    .info-box p {
-      font-size: 16px;
-    }
-  
-    .info-row {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .label,
-    .value {
-      width: 100%;
-      text-align: left;
-      padding: 5px 0;
-    }
-  
-    .language-bar img {
-      width: 24px;
-      margin: 0 4px;
-    }
-  
-    .tag-list.alt-style {
-      justify-content: center;
-    }
-  
-    .tag-list .tag {
-      font-size: 13px;
-      padding: 6px 10px;
-    }
-  
-    .rating-container {
-      margin-top: 10px;
-    }
-  
-    .star-rating i {
-      font-size: 18px;
-    }
-  
-    .rating-text {
-      font-size: 13px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .section-title {
-      font-size: 20px;
-    }
-  
-    .game-info-right h2 {
-      font-size: 20px;
-    }
-  
-    .review-section p,
-    .info-box p {
-      font-size: 14px;
-    }
-  
-    .info-box h4 {
-      font-size: 12px;
-    }
-  
-    .games-symbols img {
-      width: 50px;
-      height: 70px;
-    }
-}
-
 .boxing-king-review {
     max-width: 1200px;
     margin: 0 auto;
@@ -534,21 +416,9 @@ body {
     color: white;
     margin-bottom: 30px;
 }
-
-@media (max-width: 600px) {
-    .boxing-king-review {
-      padding: 20px;
-    }
-  
-    .boxing-king-review h2 {
-      font-size: 22px;
-      margin-top: 30px;
-      padding-left: 10px;
-    }
-  
-    .boxing-king-review p {
-      font-size: 15px;
-    }
+    
+.boxing-king-review a:hover {
+    text-decoration: underline;
 }
 
 .image-layout {
@@ -600,36 +470,22 @@ body {
     object-fit: cover;
 }
   
-/* 📱 Responsive for Mobile Devices */
+/* Responsive */
 @media (max-width: 768px) {
     .image-layout {
       flex-direction: column;
-      padding: 0 20px;
       align-items: center;
     }
   
-    .main-image img {
+    .main-image img,
+    .side-images img {
+      width: 100%;
       max-width: 100%;
     }
   
     .side-images {
       flex-direction: row;
-      justify-content: center;
-      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 5px;
-    }
-  
-    .side-images img {
-      width: 100%;
-      max-width: 160px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .side-images img {
-      width: 100%;
-      max-width: 100%;
     }
 }
 
@@ -688,93 +544,49 @@ body {
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-    .how-to-play-section,
-    #how-to-play-section {
-      padding: 20px 15px;
-      margin: 30px auto;
-    }
-  
-    .how-to-play-section h2,
-    #how-to-play-section h2 {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-  
-    #how-to-play-section p,
-    #how-to-play-section li {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-  
-    #how-to-play-section ul {
-      padding-left: 25px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .how-to-play-section,
-    #how-to-play-section {
-      padding: 15px 10px;
-    }
-  
-    .how-to-play-section h2,
-    #how-to-play-section h2 {
-      font-size: 18px;
-    }
-  
-    #how-to-play-section p,
-    #how-to-play-section li {
-      font-size: 14px;
-    }
-}
-
-/* Section Title Styling */
-#Tips\ \&\ Strategies {
-    margin-top: 40px;
-    background-color: transparent;
-    max-width: 1200px;
+#tips-strategies {
+    max-width: 1300px;
     margin: 50px auto;
     padding: 30px 25px;
-  }
-  
-  #Tips\ \&\ Strategies h2 {
+    background-color: transparent;
+    color: #f1f1f1;
+    border-radius: 10px;
+}
+
+#tips-strategies h2 {
     font-size: 24px;
     color: white;
     margin-bottom: 20px;
-  }
-  
-  /* Table Styling */
-  #Tips\ \&\ Strategies table {
+    font-weight: 700;
+}
+
+#tips-strategies table {
     width: 100%;
     border-collapse: collapse;
     background-color: transparent;
     font-size: 16px;
-  }
-  
-  #Tips\ \&\ Strategies th,
-  #Tips\ \&\ Strategies td {
-    padding: 14px 16px;
-    border: 1px solid transparent;
+}
+
+#tips-strategies th,
+#tips-strategies td {
+    padding: 14px 18px;
     text-align: left;
-  }
-  
-  #Tips\ \&\ Strategies thead {
-    background-color: transparent;
-  }
-  
-  #Tips\ \&\ Strategies thead th {
+    vertical-align: top;
+}
+
+#tips-strategies thead th {
     color: #ffcc00;
     font-weight: 600;
-  }
-  
-  #Tips\ \&\ Strategies tbody tr:nth-child(even) {
+    background-color: transparent;
+}
+
+#tips-strategies tbody tr:nth-child(even) {
     background-color: #262626;
-  }
-  
-  #Tips\ \&\ Strategies tbody tr:hover {
+}
+
+#tips-strategies tbody tr:hover {
     background-color: #383838;
-  }
+}
   
   /* Responsive Table */
   @media (max-width: 600px) {
