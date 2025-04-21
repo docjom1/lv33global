@@ -241,6 +241,13 @@ body {
     height: auto;
 }
 
+.games-symbols  img {
+    width: 80px;
+    margin: 0 5px;
+    height: 100px;
+    margin-top: 60px;
+}
+
 .rating-container {
     display: flex;
     flex-direction: column;
@@ -537,52 +544,49 @@ body {
     text-decoration: underline;
 }
 
-/* Section Title Styling */
-#Tips\ \&\ Strategies {
-    margin-top: 40px;
-    background-color: transparent;
-    max-width: 1200px;
+#tips-strategies {
+    max-width: 1300px;
     margin: 50px auto;
     padding: 30px 25px;
-  }
-  
-  #Tips\ \&\ Strategies h2 {
+    background-color: transparent;
+    color: #f1f1f1;
+    border-radius: 10px;
+}
+
+#tips-strategies h2 {
     font-size: 24px;
     color: white;
     margin-bottom: 20px;
-  }
-  
-  /* Table Styling */
-  #Tips\ \&\ Strategies table {
+    font-weight: 700;
+}
+
+#tips-strategies table {
     width: 100%;
     border-collapse: collapse;
     background-color: transparent;
     font-size: 16px;
-  }
-  
-  #Tips\ \&\ Strategies th,
-  #Tips\ \&\ Strategies td {
-    padding: 14px 16px;
-    border: 1px solid transparent;
+}
+
+#tips-strategies th,
+#tips-strategies td {
+    padding: 14px 18px;
     text-align: left;
-  }
-  
-  #Tips\ \&\ Strategies thead {
-    background-color: transparent;
-  }
-  
-  #Tips\ \&\ Strategies thead th {
+    vertical-align: top;
+}
+
+#tips-strategies thead th {
     color: #ffcc00;
     font-weight: 600;
-  }
-  
-  #Tips\ \&\ Strategies tbody tr:nth-child(even) {
+    background-color: transparent;
+}
+
+#tips-strategies tbody tr:nth-child(even) {
     background-color: #262626;
-  }
-  
-  #Tips\ \&\ Strategies tbody tr:hover {
+}
+
+#tips-strategies tbody tr:hover {
     background-color: #383838;
-  }
+}
   
   /* Responsive Table */
   @media (max-width: 600px) {
