@@ -278,6 +278,14 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+.review-sidebar h1 {
+    color: #ff5100 !important;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  
 .review-sidebar h2 {
   font-size: 1.2rem;
   color: #000;
