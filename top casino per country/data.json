@@ -42,37 +42,67 @@
     }
   ],
   "malaysia": [
-    {
-      "rank": 1,
-      "name": "Victory88",
-      "logo": "img/victory88.png",
-      "bonus": "RM5,000",
-      "spins": "180 Free Spins",
-      "amount": 5000,
-      "bg": "#2e3047",
-      "flame": true
-    },
-    {
-      "rank": 2,
-      "name": "Me88",
-      "logo": "img/me88.png",
-      "bonus": "RM2,888",
-      "spins": "Welcome Sports & Slots",
-      "amount": 2888,
-      "bg": "#113355",
-      "flame": false
-    }
-  ],
+  {
+    "rank": 1,
+    "name": "LV33 Asia",
+    "logo": "img/lv33logo.png",
+    "bonus": "RM10,000",
+    "spins": "200 Free Spins + Crypto Bonus",
+    "amount": 10000,
+    "bg": "#2e3047",
+    "flame": true
+  },
+  {
+    "rank": 2,
+    "name": "Me88",
+    "logo": "img/me88.png",
+    "bonus": "RM2,888",
+    "spins": "Welcome Sports & Slots",
+    "amount": 2888,
+    "bg": "#113355",
+    "flame": false
+  },
+  {
+    "rank": 3,
+    "name": "DewaBet",
+    "logo": "img/dewabet.png",
+    "bonus": "RM4,500",
+    "spins": "150 Free Spins + Cashback",
+    "amount": 4500,
+    "bg": "#2a2a45",
+    "flame": true
+  },
+  {
+    "rank": 4,
+    "name": "Maxim88",
+    "logo": "img/maxim88.png",
+    "bonus": "RM3,000",
+    "spins": "New Player Bonus",
+    "amount": 3000,
+    "bg": "#1e2a45",
+    "flame": false
+  },
+  {
+    "rank": 5,
+    "name": "UWin33",
+    "logo": "img/uwin33.png",
+    "bonus": "RM2,500",
+    "spins": "Exclusive VIP Deals",
+    "amount": 2500,
+    "bg": "#2f2f50",
+    "flame": false
+  }
+],
   "thailand": [
     {
-      "rank": 1,
-      "name": "TCL99",
-      "logo": "img/tcl99.png",
-      "bonus": "฿70,000",
-      "spins": "VIP Rewards",
-      "amount": 70000,
-      "bg": "#4d2c5e",
-      "flame": true
+     "rank": 1,
+    "name": "LV33 Thailand",
+    "logo": "img/lv33logo.png",
+    "bonus": "฿80,000",
+    "spins": "200 Free Spins + Crypto Bonus",
+    "amount": 80000,
+    "bg": "#4d2c5e",
+    "flame": true
     },
     {
       "rank": 2,
@@ -83,8 +113,39 @@
       "amount": 25000,
       "bg": "#1b3a59",
       "flame": false
+    },
+    {
+      "rank": 3,
+      "name": "HappyLuke Thailand",
+      "logo": "img/happyluke.png",
+      "bonus": "฿50,000",
+      "spins": "150 Free Spins",
+      "amount": 50000,
+      "bg": "#3c2464",
+      "flame": true
+    },
+    {
+      "rank": 4,
+      "name": "Siam855",
+      "logo": "img/siam855.png",
+      "bonus": "฿35,000",
+      "spins": "Sports + Casino Package",
+      "amount": 35000,
+      "bg": "#2d3142",
+      "flame": false
+    },
+    {
+      "rank": 5,
+      "name": "M88 Mansion",
+      "logo": "img/m88mansion.png",
+      "bonus": "฿40,000",
+      "spins": "VIP Promotions",
+      "amount": 40000,
+      "bg": "#121d3b",
+      "flame": false
     }
   ],
+  
   "singapore": [
     {
       "rank": 1,
@@ -105,8 +166,39 @@
       "amount": 2888,
       "bg": "#252b4f",
       "flame": false
+    },
+    {
+      "rank": 3,
+      "name": "Maxim88 Singapore",
+      "logo": "img/maxim88sg.png",
+      "bonus": "SGD4,000",
+      "spins": "Crypto Deposit Boost",
+      "amount": 4000,
+      "bg": "#202834",
+      "flame": true
+    },
+    {
+      "rank": 4,
+      "name": "12Play Singapore",
+      "logo": "img/12playsg.png",
+      "bonus": "SGD3,500",
+      "spins": "180 Free Spins",
+      "amount": 3500,
+      "bg": "#2c3554",
+      "flame": false
+    },
+    {
+      "rank": 5,
+      "name": "UEABET",
+      "logo": "img/ueabet.png",
+      "bonus": "SGD2,500",
+      "spins": "Reload Bonuses Weekly",
+      "amount": 2500,
+      "bg": "#1d1f2a",
+      "flame": false
     }
   ],
+
   "cambodia": [
     {
       "rank": 1,
@@ -127,8 +219,39 @@
       "amount": 1500,
       "bg": "#5c4444",
       "flame": false
+    },
+    {
+      "rank": 3,
+      "name": "KhmerCasino",
+      "logo": "img/khmercasino.png",
+      "bonus": "$2,000",
+      "spins": "Cashback Deals",
+      "amount": 2000,
+      "bg": "#4e3333",
+      "flame": true
+    },
+    {
+      "rank": 4,
+      "name": "CambodiaWin",
+      "logo": "img/cambodiawin.png",
+      "bonus": "$1,800",
+      "spins": "Live Dealer Bonus",
+      "amount": 1800,
+      "bg": "#523636",
+      "flame": false
+    },
+    {
+      "rank": 5,
+      "name": "Temple88",
+      "logo": "img/temple88.png",
+      "bonus": "$1,600",
+      "spins": "Mystery Jackpots",
+      "amount": 1600,
+      "bg": "#5e4545",
+      "flame": false
     }
   ],
+
   "indonesia": [
     {
       "rank": 1,
@@ -149,8 +272,39 @@
       "amount": 75000000,
       "bg": "#243a3a",
       "flame": false
+    },
+    {
+      "rank": 3,
+      "name": "SundaCasino",
+      "logo": "img/sundacasino.png",
+      "bonus": "Rp60,000,000",
+      "spins": "Crypto Freebets",
+      "amount": 60000000,
+      "bg": "#1a2d2d",
+      "flame": true
+    },
+    {
+      "rank": 4,
+      "name": "Bet88 Indonesia",
+      "logo": "img/bet88id.png",
+      "bonus": "Rp50,000,000",
+      "spins": "Exclusive Sports Bonus",
+      "amount": 50000000,
+      "bg": "#283c3c",
+      "flame": false
+    },
+    {
+      "rank": 5,
+      "name": "Liga365",
+      "logo": "img/liga365.png",
+      "bonus": "Rp45,000,000",
+      "spins": "Cashback Specials",
+      "amount": 45000000,
+      "bg": "#1d2929",
+      "flame": false
     }
   ],
+
   "vietnam": [
     {
       "rank": 1,
@@ -171,8 +325,39 @@
       "amount": 25000000,
       "bg": "#381f1f",
       "flame": false
+    },
+    {
+      "rank": 3,
+      "name": "VN88Club",
+      "logo": "img/vn88club.png",
+      "bonus": "₫40,000,000",
+      "spins": "100 Free Spins",
+      "amount": 40000000,
+      "bg": "#321a1a",
+      "flame": true
+    },
+    {
+      "rank": 4,
+      "name": "VietBet",
+      "logo": "img/vietbet.png",
+      "bonus": "₫30,000,000",
+      "spins": "Daily Cashback",
+      "amount": 30000000,
+      "bg": "#3f1c1c",
+      "flame": false
+    },
+    {
+      "rank": 5,
+      "name": "SaigonPlay",
+      "logo": "img/saigonplay.png",
+      "bonus": "₫25,000,000",
+      "spins": "Reload Offers",
+      "amount": 25000000,
+      "bg": "#471f1f",
+      "flame": false
     }
   ],
+
   "india": [
     {
       "rank": 1,
@@ -193,50 +378,141 @@
       "amount": 75000,
       "bg": "#333333",
       "flame": false
-    }
-  ],
-  "japan": [
+    },
     {
-      "rank": 1,
-      "name": "Kakekkorinrin",
-      "logo": "img/kakekkorinrin.png",
-      "bonus": "¥500,000",
-      "spins": "Exclusive Anime Slots",
-      "amount": 500000,
-      "bg": "#1d1b3a",
+      "rank": 3,
+      "name": "Betway India",
+      "logo": "img/betwayin.png",
+      "bonus": "₹90,000",
+      "spins": "Cashback + Free Bets",
+      "amount": 90000,
+      "bg": "#282828",
       "flame": true
     },
     {
-      "rank": 2,
-      "name": "LuckyNiki",
-      "logo": "img/luckyniki.png",
-      "bonus": "¥250,000",
-      "spins": "VIP Welcome Bonus",
-      "amount": 250000,
-      "bg": "#3a1b4f",
+      "rank": 4,
+      "name": "Parimatch India",
+      "logo": "img/parimatchin.png",
+      "bonus": "₹85,000",
+      "spins": "Sports + Casino Bonus",
+      "amount": 85000,
+      "bg": "#3c3c3c",
+      "flame": false
+    },
+    {
+      "rank": 5,
+      "name": "LeoVegas India",
+      "logo": "img/leovegasin.png",
+      "bonus": "₹70,000",
+      "spins": "Live Casino Welcome",
+      "amount": 70000,
+      "bg": "#444444",
       "flame": false
     }
   ],
-  "china": [
-    {
-      "rank": 1,
-      "name": "188BET",
-      "logo": "img/188bet.png",
-      "bonus": "¥8,888",
-      "spins": "Dragon Slot Frenzy",
-      "amount": 8888,
-      "bg": "#360808",
-      "flame": true
-    },
-    {
-      "rank": 2,
-      "name": "BetWay China",
-      "logo": "img/betwaycn.png",
-      "bonus": "¥5,000",
-      "spins": "Live Baccarat Bonus",
-      "amount": 5000,
-      "bg": "#4a1414",
-      "flame": false
-    }
-  ]
+"japan": [
+  {
+    "rank": 1,
+    "name": "Kakekkorinrin",
+    "logo": "img/kakekkorinrin.png",
+    "bonus": "¥500,000",
+    "spins": "Exclusive Anime Slots",
+    "amount": 500000,
+    "bg": "#1d1b3a",
+    "flame": true
+  },
+  {
+    "rank": 2,
+    "name": "LuckyNiki",
+    "logo": "img/luckyniki.png",
+    "bonus": "¥250,000",
+    "spins": "VIP Welcome Bonus",
+    "amount": 250000,
+    "bg": "#3a1b4f",
+    "flame": false
+  },
+  {
+    "rank": 3,
+    "name": "VeraJohn Japan",
+    "logo": "img/verajohn.png",
+    "bonus": "¥300,000",
+    "spins": "150 Free Spins Package",
+    "amount": 300000,
+    "bg": "#2b2455",
+    "flame": true
+  },
+  {
+    "rank": 4,
+    "name": "CasinoSecret",
+    "logo": "img/casinosecret.png",
+    "bonus": "¥200,000",
+    "spins": "Cashback Rewards",
+    "amount": 200000,
+    "bg": "#353566",
+    "flame": false
+  },
+  {
+    "rank": 5,
+    "name": "Bitcasino Japan",
+    "logo": "img/bitcasino.png",
+    "bonus": "¥400,000",
+    "spins": "Crypto VIP Offers",
+    "amount": 400000,
+    "bg": "#1e1e50",
+    "flame": false
+  }
+],
+
+"china": [
+  {
+    "rank": 1,
+    "name": "188BET",
+    "logo": "img/188bet.png",
+    "bonus": "¥8,888",
+    "spins": "Dragon Slot Frenzy",
+    "amount": 8888,
+    "bg": "#360808",
+    "flame": true
+  },
+  {
+    "rank": 2,
+    "name": "BetWay China",
+    "logo": "img/betwaycn.png",
+    "bonus": "¥5,000",
+    "spins": "Live Baccarat Bonus",
+    "amount": 5000,
+    "bg": "#4a1414",
+    "flame": false
+  },
+  {
+    "rank": 3,
+    "name": "Dafabet China",
+    "logo": "img/dafabetcn.png",
+    "bonus": "¥10,000",
+    "spins": "Casino + Sports Bonus",
+    "amount": 10000,
+    "bg": "#5a1b1b",
+    "flame": true
+  },
+  {
+    "rank": 4,
+    "name": "W88 China",
+    "logo": "img/w88cn.png",
+    "bonus": "¥9,000",
+    "spins": "Crypto Cashback",
+    "amount": 9000,
+    "bg": "#402020",
+    "flame": false
+  },
+  {
+    "rank": 5,
+    "name": "22Bet China",
+    "logo": "img/22betcn.png",
+    "bonus": "¥7,777",
+    "spins": "Lucky Free Spins",
+    "amount": 7777,
+    "bg": "#301111",
+    "flame": false
+  }
+]
 }
