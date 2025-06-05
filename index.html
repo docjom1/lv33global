@@ -68,7 +68,8 @@
         <a href="/news/">News</a>
         <a href="/giveaways/">Giveaways</a>
         <a href="/aboutus/">About Us</a>
-        <button class="sign-up">Sign Up</button>
+        <button class="sign-up" onclick="window.location.href='sign up/signup.html'">Sign Up</button>
+
       </div>
     </div>
   </nav>
@@ -1061,15 +1062,89 @@
 
 
 <script>
-document.querySelector(".show-more-btn").addEventListener("click", function () {
-    const hiddenSection = document.querySelector(".hidden-casino");
-    const showMoreBtn = document.querySelector(".show-more-btn");
+document.addEventListener("DOMContentLoaded", async function () {
+  const paymentLogos = {
+    "Visa": "https://objects.kaxmedia.com/auto/o/140269/b389c22a72.svg",
+    "Mastercard": "https://objects.kaxmedia.com/auto/o/140245/f42a085bd0.svg",
+    "PayPal": "https://objects.kaxmedia.com/auto/o/140254/b9fb4d8d18.svg",
+    "Skrill": "https://objects.kaxmedia.com/auto/o/140261/099a321527.svg",
+    "GCash": "https://i.ibb.co/G5fDX7h/gcash.png",       // You can replace with your actual GCash icon
+    "bKash": "https://i.ibb.co/r8p8YST/download-1.png",
+        // Replace with your preferred icon
+  };
 
-    hiddenSection.classList.add("visible"); // ✅ Add the class instead
-    showMoreBtn.style.display = "none"; // ✅ Hide the button
+  const container = document.querySelector('.casino-container');
+  if (!container) return;
+
+  try {
+    const res = await fetch('http://localhost:3000/api/casino-list');
+    const casinos = await res.json();
+
+    casinos.forEach(casino => {
+      const card = document.createElement('div');
+      card.className = 'casino-card';
+      card.innerHTML = `
+        <div class="rank-badge">${casino.ranking.replace('Rank ', '')}</div>
+        <div class="casino-left">
+          <div class="casino-logo">
+            <img src="${casino.logo}" alt="${casino.label1} Logo">
+          </div>
+          <div class="casino-name">${casino.label1}</div>
+          <div class="launch-date">Launched 2025</div>
+        </div>
+        <div class="casino-middle">
+          <p class="bonus-text"><strong><em>${casino.label2}</em></strong></p>
+          ${(() => {
+  try {
+    const countryObj = JSON.parse(casino.country);
+    const flagUrl = `https://flagcdn.com/w40/${countryObj.code.toLowerCase()}.png`;
+    return `<div class="flag-container"><img src="${flagUrl}" alt="${countryObj.name} Flag" class="flag" style="width: 100px; height: 40px;"></div>`;
+  } catch (e) {
+    return `<div class="flag-container"><span class="flag">🌐</span></div>`; // fallback if parsing fails
+  }
+})()}
+
+
+          <p class="regulated">Regulated by <img src="https://objects.kaxmedia.com/auto/o/170242/f58d94ed6d.svg" alt="Gambling Commission"></p>
+        </div>
+        <div class="casino-right">
+          <a href="${casino.website}" class="visit-btn" target="_blank">VISIT SITE</a>
+          <div class="payment-methods">
+            ${casino.payments.map(p => `
+              <img src="${paymentLogos[p] || 'https://via.placeholder.com/30?text=?'}" 
+                   alt="${p}" 
+                   title="${p}" 
+                   style="height: 24px; margin: 2px;" />
+            `).join('')}
+          </div>
+          <div class="review-stars">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="review-text">5/5</span>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  } catch (err) {
+    console.error("❌ Error loading casinos:", err);
+  }
 });
 
+// Show More button logic
+document.querySelector(".show-more-btn").addEventListener("click", function () {
+  const hiddenSection = document.querySelector(".hidden-casino");
+  const showMoreBtn = document.querySelector(".show-more-btn");
+
+  hiddenSection.classList.add("visible");
+  showMoreBtn.style.display = "none";
+});
 </script>
+
+
 
 
 
