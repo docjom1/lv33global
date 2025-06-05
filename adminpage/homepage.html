@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LV33 Admin Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <h2>LV33 Admin Dashboard</h2>
+  </header>
+
+  <div style="display: flex; justify-content: flex-end; gap: 100px; padding: 100px;">
+    <button class="custom-btn" onclick="openCasinoModal()">Update Casino</button>
+    <button class="post-btn" onclick="openModal()">Post News</button>
+  </div>
+
+<div class="casino-updates" id="casinoUpdatesContainer">
+  <h2 style="color:#ffcc00; margin-top: 0; padding: 10px 20px 0;">Recent Casino Submissions</h2>
+
+</div>
+
+
+  <!-- Post News Modal (Unchanged) -->
+  <div id="postModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Post New Update</h3>
+      <form id="postForm" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Post Title" required />
+        <textarea name="content" placeholder="Write your post..." rows="5" required></textarea>
+        <input type="url" name="link" placeholder="Enter clickable URL (optional)" />
+        <input type="file" name="image" accept="image/*" required />
+        <button type="submit">Submit Post</button>
+      </form>
+      <p id="responseMessage"></p>
+    </div>
+  </div>
+
+<!-- Update Casino Modal -->
+<div id="updateCasinoModal" class="modal">
+  <div class="modal-content update-casino-content">
+    <span class="close" onclick="closeCasinoModal()">&times;</span>
+    <h3 class="modal-title">Update Casino Info</h3>
+    <form id="casinoForm" enctype="multipart/form-data">
+      
+      <div class="form-group logo-group">
+        <label for="logoInput">Upload Logo:</label>
+        <input type="file" name="logo" id="logoInput" accept="image/*" required />
+      </div>
+
+      <div class="form-group name-group">
+        <label for="label1">Casino Name:</label>
+        <input type="text" name="label1" id="label1" required />
+      </div>
+
+      <div class="form-group promo-group">
+        <label for="label2">Promotion:</label>
+        <input type="text" name="label2" id="label2" required />
+      </div>
+
+      <div class="form-group country-group">
+  <label for="country">Select Country:</label>
+  <div class="country-dropdown">
+    <input type="text" id="countrySearch" placeholder="Search country..." class="country-search" />
+    <input type="hidden" name="country" id="countryHidden" />
+    <div id="countryOptions" class="country-options"></div>
+  </div>
+</div>
+
+
+      <div class="form-group link-group">
+        <label for="website">Website Link:</label>
+        <input type="url" name="website" id="website" required />
+      </div>
+
+     <div class="form-group payment-methods-group">
+  <label for="payment-methods">Payment Methods:</label>
+  <div class="custom-multiselect" onclick="toggleCheckboxes()">
+  <span>Select Payment Methods</span>
+  <i class="fa fa-chevron-down dropdown-icon"></i>
+</div>
+
+  <div class="checkboxes" id="checkboxes">
+     <label><input type="checkbox" name="payments[]" value="Visa" /> <i class="fa-brands fa-cc-visa"></i> Visa</label>
+  <label><input type="checkbox" name="payments[]" value="Mastercard" /> <i class="fa-brands fa-cc-mastercard"></i> Mastercard</label>
+  <label><input type="checkbox" name="payments[]" value="PayPal" /> <i class="fa-brands fa-cc-paypal"></i> PayPal</label>
+   <label><input type="checkbox" name="payments[]" value="Skrill" /> <i class="fa-solid fa-money-bill-transfer"></i> Skrill</label>
+  <label><input type="checkbox" name="payments[]" value="GCash" /> <i class="fa-solid fa-mobile-screen-button"></i> GCash</label>
+  <label><input type="checkbox" name="payments[]" value="bKash" /> <i class="fa-solid fa-mobile-retro"></i> bKash</label>
+  </div>
+</div>
+
+
+
+      <div class="form-group ranking-group">
+        <label for="ranking">Casino Ranking:</label>
+        <select name="ranking" id="ranking" required>
+          <option value="">-- Select Rank --</option>
+          <option value="Rank 1">Rank 1</option>
+          <option value="Rank 2">Rank 2</option>
+          <option value="Rank 3">Rank 3</option>
+          <option value="Rank 4">Rank 4</option>
+          <option value="Rank 5">Rank 5</option>
+          <option value="Rank 6">Rank 6</option>
+          <option value="Rank 7">Rank 7</option>
+          <option value="Rank 8">Rank 8</option>
+          <option value="Rank 9">Rank 9</option>
+          <option value="Rank 10">Rank 10</option>
+        </select>
+      </div>
+
+      <div class="form-group button-group">
+        <button type="button" class="preview-btn" onclick="openPreviewModal()">Preview</button>
+        <button type="submit" class="submit-btn">Update Casino</button>
+      </div>
+<p id="casinoResponseMessage" style="margin-top: 10px;"></p>
+
+    </form>
+  </div>
+</div>
+
+<!-- Preview Modal -->
+<div id="previewModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePreviewModal()">&times;</span>
+    <h3>Casino Preview</h3>
+    <div class="preview-card">
+      <img id="previewLogo" src="" alt="Logo" style="max-width: 100px;" />
+      <p id="previewLabels"></p>
+      <p id="previewCountry"></p>
+      <p id="previewWebsite"></p>
+      <p id="previewPayments"></p>
+      <p id="previewRanking"></p>
+
+      <button onclick="editPreview()">Edit Fields</button>
+      <button onclick="clearPreview()">Clear Preview</button>
+    </div>
+  </div>
+</div>
+<!-- Edit Casino Modal -->
+<div id="editCasinoModal" class="modal">
+  <div class="modal-content update-casino-content">
+    <span class="close" onclick="closeEditCasinoModal()">&times;</span>
+    <h3 class="modal-title">Edit Casino Info</h3>
+    <form id="editCasinoForm" enctype="multipart/form-data">
+      <input type="hidden" name="id" id="edit_id" />
+
+      <!-- Logo Upload -->
+      <div class="form-group logo-group">
+        <label for="edit_logo">Upload Logo:</label>
+        <input type="file" name="logo" id="edit_logo" accept="image/*" />
+      </div>
+
+      <!-- Name -->
+      <div class="form-group name-group">
+        <label for="edit_label1">Casino Name:</label>
+        <input type="text" name="label1" id="edit_label1" required />
+      </div>
+
+      <!-- Promotion -->
+      <div class="form-group promo-group">
+        <label for="edit_label2">Promotion:</label>
+        <input type="text" name="label2" id="edit_label2" required />
+      </div>
+
+      <!-- Country -->
+      <div class="form-group country-group">
+        <label for="edit_country">Select Country:</label>
+        <div class="country-dropdown">
+          <input type="text" id="edit_countrySearch" placeholder="Search country..." class="country-search" />
+          <input type="hidden" name="country" id="edit_countryHidden" />
+          <div id="edit_countryOptions" class="country-options"></div>
+        </div>
+      </div>
+
+      <!-- Website -->
+      <div class="form-group link-group">
+        <label for="edit_website">Website Link:</label>
+        <input type="url" name="website" id="edit_website" required />
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="form-group payment-methods-group">
+        <label for="edit_payment-methods">Payment Methods:</label>
+        <div class="custom-multiselect" onclick="toggleEditCheckboxes()">
+          <span>Select Payment Methods</span>
+          <i class="fa fa-chevron-down dropdown-icon"></i>
+        </div>
+        <div class="checkboxes" id="edit_checkboxes">
+          <!-- payment options inserted by JS -->
+        </div>
+      </div>
+
+      <!-- Ranking -->
+      <div class="form-group ranking-group">
+        <label for="edit_ranking">Casino Ranking:</label>
+        <select name="ranking" id="edit_ranking" required>
+  <option value="">-- Select Rank --</option>
+  <option value="Rank 1">Rank 1</option>
+  <option value="Rank 2">Rank 2</option>
+  <option value="Rank 3">Rank 3</option>
+  <option value="Rank 4">Rank 4</option>
+  <option value="Rank 5">Rank 5</option>
+  <option value="Rank 6">Rank 6</option>
+  <option value="Rank 7">Rank 7</option>
+  <option value="Rank 8">Rank 8</option>
+  <option value="Rank 9">Rank 9</option>
+  <option value="Rank 10">Rank 10</option>
+</select>
+
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-group button-group">
+        
+        <button type="submit" class="submit-btn">Save Changes</button>
+        <button type="button" class="submit-btn delete-style" onclick="deleteCasino()">Delete Casino</button>
+
+
+      </div> 
+
+      <p id="editResponseMessage"></p>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

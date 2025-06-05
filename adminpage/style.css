@@ -1,0 +1,678 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+}
+
+header {
+  background-color: #111;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #ff6600;
+}
+
+.post-btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
+}
+
+.post-btn:hover {
+  background-color: #e65c00;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(255, 102, 0, 0.6);
+}
+
+
+h1 {
+  margin: 30px 0 10px 20px;
+  color: #ffcc00;
+}
+
+p {
+  margin-left: 20px;
+  color: #ccc;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+  margin: 50px auto;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+  transform: translateY(-30px);
+  opacity: 0;
+  animation: slideIn 0.4s ease forwards;
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: white;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: #2a2a2a;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button[type="submit"] {
+  background-color: #ff6600;
+  color: white;
+  padding: 15px 150px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: auto;             /* change from 100% */
+  display: block;
+  margin: 50px auto 0 auto;
+/* top auto bottom auto */
+}
+
+
+button[type="submit"]:hover {
+  background-color: #e65c00;
+}
+
+#responseMessage {
+  text-align: center;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal.fadeOut {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.custom-btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: fixed;
+  top: 40px;
+  right: 180px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
+}
+.custom-btn:hover {
+  background-color: #e65c00;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(255, 102, 0, 0.6);
+}
+select[multiple], select {
+  background: #2a2a2a;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 10px;
+  border: none;
+}
+#country {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#ranking {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 10px;
+  
+}
+.dropdown-icon {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.preview-card {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  padding: 20px;
+  border-radius: 10px;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+select {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+.preview-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 170px;
+  border: none;
+  border-radius: 6px;
+  margin-left: -30px;    /* Add this */
+  margin-right: -30px;
+  margin-top: 35px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.preview-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Trigger Box Styling */
+.custom-multiselect {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Dropdown Menu Styling */
+.checkboxes {
+  display: none;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  padding: 10px;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 6px;
+  margin-top: 5px;
+  position: relative; /* Keep this if dropdown stays inside layout */
+  z-index: 10;
+}
+
+/* Each Payment Method Option */
+.checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* Checkbox Sizing */
+.checkboxes input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #ff6600;
+}
+
+/* Font Awesome Icon Style (next to payment name) */
+.checkboxes label i {
+  font-size: 22px;
+  color: #ffcc00;
+}
+
+/* Payment logos (if using images instead of icons) */
+.payment-icon {
+  width: 22px;
+  height: auto;
+  margin-right: 5px;
+}
+.checkboxes label:hover {
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+.payment-search {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.payment-group-title {
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #ffcc00;
+  font-size: 14px;
+  padding-left: 4px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+
+
+/* Example selectors */
+.update-casino-content {
+  padding: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.button-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+.country-dropdown {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.country-search {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: white;
+  font-size: 16px;
+}
+
+.country-options {
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  display: block;
+  background: #1a1a1a;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+}
+
+.country-search:focus + .country-options {
+  display: block;
+}
+
+.country-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+}
+
+.country-item:hover {
+  background-color: #2a2a2a;
+}
+@media screen and (max-width: 600px) {
+  .modal-content {
+    padding: 20px;
+    width: 95%;
+    margin: 30px auto;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .preview-btn,
+  .submit-btn {
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  .custom-btn,
+  .post-btn {
+    position: static;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .country-search,
+  .payment-search,
+  select,
+  input,
+  textarea {
+    font-size: 14px;
+  }
+}
+
+
+#previewModal .modal-content {
+  background: linear-gradient(145deg, #1c1c1c, #111);
+  border: 2px solid #ff6600;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(240, 156, 2, 0.4);
+  padding: 40px;
+  max-width: 700px;
+  height: 700px;
+  color: #00ffe7;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  animation: futuristicFadeIn 0.4s ease-out forwards;
+}
+
+.preview-card {
+  background: rgba(15, 15, 15, 0.8);
+  border: 1px dashed #ff6600;
+  padding: 50px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  color: #d1f7ff;
+}
+
+#previewModal button {
+  background-color: #ff6600;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px 24px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#previewModal button:hover {
+  background-color: #ff2600;
+  transform: scale(1.05);
+}
+
+@keyframes futuristicFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.casino-updates {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+   align-items: center;
+  
+}
+
+.casino-updates .preview-card {
+  width: 300px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #e0f7ff;
+  font-family: 'Orbitron', sans-serif; /* Optional: futuristic font */
+}
+
+.casino-updates .preview-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 72, 0, 0.808);
+}
+
+
+.casino-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #121121;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 1000px;
+  width: 100%;
+  
+  margin: 20px 0;
+  color: #e0f7ff;
+  position: relative;
+  border: 1px solid #00ffe7;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  font-family: 'Orbitron', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  
+}
+
+.casino-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 102, 0, 0.8);
+}
+
+.rank-circle {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 32px;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+}
+
+.casino-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.casino-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ffcc00;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.casino-name {
+  font-weight: bold;
+  color: #ffcc00;
+  font-size: 18px;
+}
+
+.launch-year {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.casino-card-middle {
+  flex: 2;
+  text-align: center;
+}
+
+.flag {
+  width: 40px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.regulator {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.authority {
+  color: #888;
+  font-size: 12px;
+  display: block;
+}
+
+.casino-card-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.visit-site-btn {
+  background: #ff2600;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.visit-site-btn:hover {
+  background-color: #e62800;
+}
+
+.payment-icon {
+  width: 36px;
+  height: auto;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+}
+
+.rating {
+  font-size: 14px;
+  color: gold;
+  margin-top: 6px;
+}
+
+
+.delete-style {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 12px 150px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 5px; /* ✅ This adds space between the two buttons */
+}
+
+.delete-style:hover {
+  background-color: #c0392b; /* darker red on hover */
+}
