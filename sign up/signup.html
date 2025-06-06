@@ -5,59 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LV33 Admin Sign Up</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .signup-container {
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('LV33.png') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(12px);
+    z-index: -3;
+  }
+
+  .signup-container {
       background-color: #111;
       padding: 40px;
-      border-radius: 10px;
+      border-radius: 30px;
       box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
-      width: 350px;
+      width: 550px;
+      height: 400px;
     }
-    .signup-container h1 {
-      color: #ff6600;
-      text-align: center;
-    }
-    .signup-container input, .signup-container button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-    .signup-container input {
-      background-color: #1f1f1f;
-      color: white;
-    }
-    .signup-container button {
-      background-color: #ff6600;
-      color: white;
-      cursor: pointer;
-    }
-    .signup-container button:hover {
-      background-color: #e65c00;
-    }
-  </style>
+
+  .signup-container h1 {
+    color: #ff6600;
+    text-align: center;
+  }
+
+  .signup-container input,
+  .signup-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .signup-container input {
+    background-color: #1f1f1f;
+    color: white;
+  }
+
+  .signup-container button {
+    background-color: #ff6600;
+    color: white;
+    cursor: pointer;
+  }
+
+  .signup-container button:hover {
+    background-color: #e65c00;
+  }
+  #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.logo-float {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+</style>
+
 </head>
 <body>
-  <div class="signup-container">
-    <h1>LV33 Admin Sign Up</h1>
-    <form id="signupForm">
-      <input type="text" name="username" placeholder="Admin Username" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <input type="password" name="password" placeholder="Create Password" required>
-      <button type="submit">Sign Up</button>
-    </form>
-    <p id="message" style="text-align:center; margin-top: 10px;"></p>
-  </div>
+<div class="signup-container">
+  <div style="text-align: center;">
+  <img src="image-removebg-preview-3.png" alt="LV33 Logo" class="logo-float" style="width: 180px; height: auto;" />
+</div>
+
+  <form id="signupForm">
+    <input type="text" name="username" placeholder="Admin Username" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="password" name="password" placeholder="Create Password" required>
+    <button type="submit">Sign Up</button>
+  </form>
+  <p id="message" style="text-align:center; margin-top: 10px;"></p>
+</div>
 
   <script>
   document.getElementById("signupForm").addEventListener("submit", async function(e) {
@@ -95,6 +142,43 @@
       document.getElementById("message").style.color = "red";
       console.error("Error:", error);
     }
+  });
+</script>
+<!-- Particle Background Container -->
+<div id="particles-js"></div>
+
+<!-- Load particles.js library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- Initialize particles -->
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+  "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+  "color": { "value": "#ffffff" },
+  "shape": { "type": "circle" },
+  "opacity": { "value": 0.5 },
+  "size": {
+    "value": 8,      // Bigger size here
+    "random": true
+  },
+  "line_linked": {
+    "enable": true,
+    "distance": 120,
+    "color": "#ffffff",
+    "opacity": 0.6,
+    "width": 1
+  },
+  "move": {
+    "enable": true,
+    "speed": 3,
+    "direction": "none",
+    "out_mode": "out"
+  }
+
+
+    },
+    "retina_detect": true
   });
 </script>
 
