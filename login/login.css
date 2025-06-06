@@ -1,58 +1,97 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('LV33.png') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(12px);
+    z-index: -3;
+  }
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .login-box {
+    background-color: #111;
+    padding: 40px;
+    border-radius: 32px;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+    width: 550px;
+    height: 400px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .login-box h1 {
+    color: #ff6600;
+    margin-bottom: 30px;
+  }
+
+  .login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .login-box button {
+    background-color: #ff6600;
+    color: white;
+    padding: 15px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 350px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .login-box button:hover {
+    background-color: #e65c00;
+  }
+
+#particles-js {
+  position: absolute;
   width: 100%;
+  height: 100%;
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
-.login-box {
-  background-color: #111;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
-  width: 360px;
-  text-align: center;
-}
-
-.login-box h1 {
-  color: #ff6600;
-  margin-bottom: 30px;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 6px;
-  background-color: #1f1f1f;
-  color: white;
-  font-size: 1rem;
-}
-
-.login-box button {
-  background-color: #ff6600;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  width: 100%;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.login-box button:hover {
-  background-color: #e65c00;
+.logo-float {
+  animation: floatUpDown 3s ease-in-out infinite;
 }
